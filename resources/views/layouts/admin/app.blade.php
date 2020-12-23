@@ -166,7 +166,16 @@
 				 <a class="dropdown-item" href="#"><i class="ti-wallet text-muted mr-2"></i> My Wallet</a>
 				 <a class="dropdown-item" href="#"><i class="ti-settings text-muted mr-2"></i> Settings</a>
 				 <div class="dropdown-divider"></div>
-				 <a class="dropdown-item" href="#"><i class="ti-lock text-muted mr-2"></i> Logout</a>
+					<a class="dropdown-item" href="{{ route('logout') }}"
+					   onclick="event.preventDefault();
+									 document.getElementById('logout-form').submit();">
+						<i class="fas fa-sign-out-alt"></i>
+						{{ __('Logout') }}
+					</a>
+
+					<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+						@csrf
+					</form>
               </li>
             </ul>
           </li>	
@@ -614,7 +623,10 @@
 	<script src="{{ asset('../eduadmin/assets/js/template.js ' ) }}"></script>
 	<script src="{{ asset('../eduadmin/assets/js/pages/dashboard3.js ' ) }}"></script>
 	<script src="{{ asset('../eduadmin/assets/js/pages/calendar.js ' ) }}"></script>
-		
+
+	{{-- Font awesome 5 --}}
+	<script src="https://kit.fontawesome.com/c99e7cdcbd.js" crossorigin="anonymous"></script>
+
     <script src="{{ asset('../eduadmin/assets/vendor_components/bootstrap-select/dist/js/bootstrap-select.js ' ) }}"></script>
 	<script src="{{ asset('../eduadmin/assets/vendor_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.js ' ) }}"></script>
 	<script src="{{ asset('../eduadmin/assets/vendor_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js ' ) }}"></script>

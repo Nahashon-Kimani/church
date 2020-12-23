@@ -119,7 +119,7 @@ body {
   font-weight: 400;
   font-family: "IBM Plex Sans", sans-serif;
   line-height: 1.5;
-  background-color: #fafbfd; }
+  background-color: #ebeff2; }
 
 @media (min-width: 992px) {
   .container, .container-fluid, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl {
