@@ -30,12 +30,12 @@
             <div class="box">
               <div class="box-header with-border">
                 <h3 class="box-title text-uppercase">
-                    all Announcements
+                    Upcoming Announcements
                 </h3>
-                <a href="{{ route('admin.announcement.create') }}" class="waves-effect waves-light btn btn-primary-light mb-5 px-5 float-right">
+                <a href="{{ route('admin.announcement.create') }}" class="waves-effect waves-light btn btn-info mb-5 px-5 float-right">
                     <i class="fa fa-plus"></i> New Announcements
                 </a>
-                <h6 class="box-subtitle">Export data to Copy, CSV, Excel, PDF &amp; Print</h6>
+                {{-- <h6 class="box-subtitle">Export data to Copy, CSV, Excel, PDF &amp; Print</h6> --}}
               </div>
               <!-- /.box-header -->
               <div class="box-body">
@@ -49,7 +49,6 @@
                               <th>END DATE</th>
                               <th>START TIME</th>
                               <th>END TIME</th>
-                              <th>STATUS</th>
                               <th>ACTION</th>
                           </tr>
                       </thead>
@@ -62,28 +61,6 @@
                                 <td>{{ date('F j Y', strtotime($announcement->stop_date)) }}</td>
                                 <td>{{ date('h:i A', strtotime($announcement->start_time)) }}</td>
                                 <td>{{ date('h:i A', strtotime($announcement->stop_time)) }}</td>
-                                <td>
-                                  @php
-                                      $todayDate = date_create(date('Y-m-d'));
-                                      $eventDate = date_create($announcement->start_date);
-                                      $diff = $todayDate->diff($eventDate)->format("%R%a");
-                                      
-                                      if ($diff>0) 
-                                      {
-                                        echo '<span class="badge badge-success">Upcoming</span>';
-                                      } 
-                                      else if($diff==0)
-                                      {
-                                        echo '<span class="badge badge-info">Happenning Today</span>';
-                                      }
-                                      else 
-                                      {
-                                        echo '<span class="badge badge-warning">Archive</span>';
-                                      }
-                                      
-                                  @endphp
-                                  
-                                </td>
                                 <td>
                                   <a href="{{ route('admin.announcement.show',$announcement->id ) }}" 
                                     class="btn btn-info btn-sm"> <i class="fa fa-eye"></i></a>
@@ -99,7 +76,6 @@
                             <th>END DATE</th>
                             <th>START TIME</th>
                             <th>END TIME</th>
-                            <th>STATUS</th>
                             <th>ACTION</th>
                           </tr>
                       </tfoot>

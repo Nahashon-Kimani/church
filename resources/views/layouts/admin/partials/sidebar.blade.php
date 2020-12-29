@@ -70,8 +70,8 @@
 				  </a>					
 				  <ul class="treeview-menu">
 					<li><a href="{{ route('admin.announcement.index') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>ALL</a></li>
-					<li><a href="extra_calendar.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>UP COMMING</a></li>
-					<li><a href="contact_app.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>ARCHIVE</a></li>
+					<li><a href="{{ route('admin.announcement.upcoming') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>UP COMMING</a></li>
+					<li><a href="{{ route('admin.announcement.archive') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>ARCHIVE</a></li>
 				</ul>
 				</li>
 				<li class="treeview">

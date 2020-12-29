@@ -8,7 +8,9 @@
       <div class="content-header">
           <div class="d-flex align-items-center">
               <div class="mr-auto">
-                  <h3 class="page-title">CHURCH SERVICES </h3>
+                  <h3 class="page-title">CHURCH SERVICES 
+                  <span class="badge badge-danger">{{ $noOfServices }}</span>
+                  </h3>
                   <div class="d-inline-block align-items-center">
                       <nav>
                           <ol class="breadcrumb">
@@ -31,7 +33,6 @@
               <div class="box-header with-border">
                 <h3 class="box-title">CHURCH SERVICES
                   </h3>
-                  <span class="badge badge-info">{{ $noOfServices }}</span>
                   <button type="button" class="btn btn-primary text-uppercase float-right" data-toggle="modal" data-target="#serviceModal">
 					<i class="fa fa-plus"></i> New Service
 				  </button>
@@ -55,8 +56,8 @@
                               <tr>
                                   <td>{{ $key + 1 }}</td>
                                   <td>{{ $service->name }}</td>
-                                  <td>{{ $service->start_time }}</td>
-                                  <td>{{ $service->ending_time }}</td>
+                                  <td>{{ date('h:i A', strtotime($service->start_time)) }}</td>
+                                  <td>{{ date('h:i A', strtotime($service->ending_time)) }}</td>
                                   <td>{{ $service->user->name }}</td>
                                   <td>
                                     <a href="{{ route('admin.service.edit', $service->id) }}" class="btn btn-success px-5">

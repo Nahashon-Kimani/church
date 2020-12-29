@@ -27,6 +27,8 @@ Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 Route::get('calendar', 'DashboardController@calendar')->name('calendar');
 Route::resource('members', 'MembersController');
 Route::resource('announcement', 'AnnouncementController');
+Route::get('archive/announcement', 'AnnouncementController@archive')->name('announcement.archive');
+Route::get('upcoming/announcement', 'AnnouncementController@upcoming')->name('announcement.upcoming');
 Route::resource('service', 'ServiceController');
 
 });

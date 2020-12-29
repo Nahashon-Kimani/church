@@ -118,4 +118,18 @@ class AnnouncementController extends Controller
     {
         //
     }
+
+    public function archive()
+    {
+        $todayDate = date('Y-m-d');
+        $announcements =  Announcement::where('start_date', '<', $todayDate)->latest()->get();
+        return view('admin.announcement.archieve', compact('announcements'));
+    }
+
+    public function upcoming()
+    {
+        $todayDate = date('Y-m-d');
+        $announcements =  Announcement::where('start_date', '>', $todayDate)->latest()->get();
+        return view('admin.announcement.upcoming', compact('announcements'));
+    }
 }

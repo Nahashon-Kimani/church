@@ -88,7 +88,15 @@ class ServiceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $service = Service::findOrFail($id);
+        $service->created_by = $request->created_by;
+        $service->name = $request->name;
+        $service->start_time = $request->start_time;
+        $service->ending_time = $request->end_time;
+        $service->save();
+
+        Toastr::success('Service Successfully Saved' ,'Success');
+        return redirect()->route('admin.service.index');
     }
 
     /**
