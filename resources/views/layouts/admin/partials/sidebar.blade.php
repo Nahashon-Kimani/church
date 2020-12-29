@@ -4,26 +4,31 @@
 	  	<div class="multinav">
 		  <div class="multinav-scroll" style="height: 100%;">	
 			  <!-- sidebar menu-->
-			  <ul class="sidebar-menu" data-widget="tree">	
+			  <ul class="sidebar-menu" data-widget="tree">
+				{{-- if admin is login in --}}
+				@if(Request::is('admin*'))	
 				<li class="header">Dashboard</li>
 				<li class="treeview">
 					<a href="{{ route('admin.dashboard') }}">
-					  <i class="icon-Layout-4-blocks"><span class="path1"></span><span class="path2"></span></i>
-					  <span>CALENDAR</span>
+					  <i class="fa fa-home"><span class="path1"></span><span class="path2"></span></i>
+					  <span>HOME</span>
 					  <span class="pull-right-container">
 						<i class="fa fa-angle-right pull-right"></i>
 					  </span>
 					</a>
 				  </li>
 				<li class="treeview">
-				  <a href="{{ route('admin.dashboard') }}">
-					<i class="icon-Layout-4-blocks"><span class="path1"></span><span class="path2"></span></i>
-					<span>HOME</span>
-					<span class="pull-right-container">
-					  <i class="fa fa-angle-right pull-right"></i>
-					</span>
-				  </a>
-				</li>
+					<a href="#">
+					  <i class="fa fa-calendar"><span class="path1"></span><span class="path2"></span></i>
+					  <span>CALENDAR</span>
+					  <span class="pull-right-container">
+						<i class="fa fa-angle-right pull-right"></i>
+					  </span>
+					</a>
+					<ul class="treeview-menu">
+						<li><a href="{{ route('admin.calendar') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>TODAY</a></li>
+					</ul>
+				  </li>
 				<li class="treeview">
 				  <a href="#">
 					<i span class="icon-Layout-grid"><span class="path1"></span><span class="path2"></span></i>
@@ -64,7 +69,7 @@
 					</span>
 				  </a>					
 				  <ul class="treeview-menu">
-					<li><a href="contact_app_chat.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>ALL</a></li>
+					<li><a href="{{ route('admin.announcement.index') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>ALL</a></li>
 					<li><a href="extra_calendar.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>UP COMMING</a></li>
 					<li><a href="contact_app.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>ARCHIVE</a></li>
 				</ul>
@@ -88,7 +93,7 @@
 					</span>
 				  </a>
 				  <ul class="treeview-menu">
-					<li><a href="ecommerce_products.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>CHURCH SERVICES</a></li>
+					<li><a href="{{ route('admin.service.index') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>CHURCH SERVICES</a></li>
 					<li><a href="ecommerce_cart.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>ROLES </a></li>
 					<li><a href="ecommerce_products_edit.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>DISTRICTS</a></li>
 				  </ul>
@@ -97,7 +102,7 @@
 				<li class="treeview">
 				  <a href="#">
 					<i class="icon-Cart"><span class="path1"></span><span class="path2"></span></i>
-					<span>SETTINGS</span>
+					<span>COMMUNICATION</span>
 					<span class="pull-right-container">
 					  <i class="fa fa-angle-right pull-right"></i>
 					</span>
@@ -108,7 +113,6 @@
 					{{-- <li><a href="ecommerce_products_edit.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>DISTRICTS</a></li> --}}
 				  </ul>
 				</li>
-
 				<li class="treeview">
 				  <a href="#">
 					<i class="icon-User"><span class="path1"></span><span class="path2"></span></i>
@@ -117,7 +121,39 @@
 					  <i class="fa fa-angle-right pull-right"></i>
 					</span>
 				  </a>
-				</li>	 	     
+				</li>
+				@endif 	 
+				
+				{{-- if church member is login --}}
+				@if(Request::is('members*'))
+				<li class="treeview">
+					<a href="#">
+					  <i class="icon-User"><span class="path1"></span><span class="path2"></span></i>
+					  <span>MEMBER </span>
+					  <span class="pull-right-container">
+						<i class="fa fa-angle-right pull-right"></i>
+					  </span>
+					</a>
+				  </li>
+				  <li class="treeview">
+					<a href="#">
+					  <i class="icon-User"><span class="path1"></span><span class="path2"></span></i>
+					  <span>MEMBER</span>
+					  <span class="pull-right-container">
+						<i class="fa fa-angle-right pull-right"></i>
+					  </span>
+					</a>
+				  </li>
+				  <li class="treeview">
+					<a href="#">
+					  <i class="icon-User"><span class="path1"></span><span class="path2"></span></i>
+					  <span>MEMBER</span>
+					  <span class="pull-right-container">
+						<i class="fa fa-angle-right pull-right"></i>
+					  </span>
+					</a>
+				  </li>	
+				@endif
 			  </ul>
 		  </div>
 		</div>

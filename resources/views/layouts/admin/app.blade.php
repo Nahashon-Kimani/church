@@ -14,10 +14,14 @@
     
 	<!-- Vendors Style-->
 	<link rel="stylesheet" href="{{ asset('../eduadmin/assets/css/vendors_css.css ') }}">
+
+	{{-- Toastr --}}
+	<link rel="stylesheet" href="{{ asset('../eduadmin/assets/vendor_components/toastr/toastr.min.css') }}">
 	  
 	<!-- Style-->  
 	<link rel="stylesheet" href="{{ asset('../eduadmin/assets/css/style.css ') }}">
 	<link rel="stylesheet" href="{{ asset('../eduadmin/assets/css/skin_color.css ') }}">
+	<link rel="stylesheet" href="{{ asset('../eduadmin/assets/vendor_components/datatable/datatables.min.css') }}">
      
   </head>
 
@@ -35,13 +39,13 @@
 		<a href="index.html" class="logo">
 		  <!-- logo-->
 		  <div class="logo-lg">
-			  <span class="light-logo"><img src="../images/logo-light-text.png" alt="logo"></span>
-			  <span class="dark-logo"><img src="../images/logo-dark-text.png" alt="logo"></span>
+			  <span class="light-logo"><img src="{{ asset('../eduadmin/assets/images/logo-light-text.png') }}" alt="logo"></span>
+			  <span class="dark-logo"><img src="{{ asset('../eduadmin/assets/images/logo-dark-text.png') }}" alt="logo"></span>
 		  </div>
 		</a>	
 	</div>   
     <!-- Header Navbar -->
-    <nav class="navbar navbar-static-top">
+    <nav class="navbar navbar-static-top bg-gradient-info-dark">
       <!-- Sidebar toggle button-->
 	  <div class="app-menu">
 		<ul class="header-megamenu nav">
@@ -179,7 +183,7 @@
               </li>
             </ul>
           </li>	
-		  
+		   
           <!-- Control Sidebar Toggle Button -->
           <li>
               <a href="#" data-toggle="control-sidebar" title="Setting" class="waves-effect waves-light">
@@ -485,7 +489,7 @@
 <!-- ./wrapper -->
 	
 	<!-- ./side demo panel -->
-	<div class="sticky-toolbar">	    
+	{{-- <div class="sticky-toolbar">	    
 	    <a href="#" data-toggle="tooltip" data-placement="left" title="Buy Now" class="waves-effect waves-light btn btn-success btn-flat mb-5 btn-sm" target="_blank">
 			<span class="icon-Money"><span class="path1"></span><span class="path2"></span></span>
 		</a>
@@ -495,7 +499,7 @@
 	    <a id="chat-popup" href="#" data-toggle="tooltip" data-placement="left" title="Live Chat" class="waves-effect waves-light btn btn-warning btn-flat btn-sm">
 			<span class="icon-Group-chat"><span class="path1"></span><span class="path2"></span></span>
 		</a>
-	</div>
+	</div> --}}
 	<!-- Sidebar -->
 		
 	<div id="chat-box-body">
@@ -641,9 +645,16 @@
 	<script src="{{ asset('../eduadmin/assets/vendor_plugins/timepicker/bootstrap-timepicker.min.js ' ) }}"></script>
 	<script src="{{ asset('../eduadmin/assets/vendor_plugins/iCheck/icheck.min.js ' ) }}"></script>
 	
+	{{-- Datatables --}}
+	<script src="{{ asset('../eduadmin/assets/js/pages/data-table.js') }}"></script>
+	<script src="{{ asset('../eduadmin/assets/vendor_components/datatable/datatables.min.js') }}"></script>
+
+	{{-- Toastr --}}
+	<script src="{{ asset('../eduadmin/assets/vendor_components/toastr/toastr.min.js') }}"></script>
+	{!! Toastr::message() !!}
+
 	<!-- EduAdmin App -->
 	<script src="{{ asset('../eduadmin/assets/js/template.js' ) }}"></script>
-	
 	<script src="{{ asset('../eduadmin/assets/js/pages/advanced-form-element.js' ) }}"></script>
 	<script src="{{ asset('../eduadmin/assets/vendor_components/dropzone/dropzone.js ') }}"></script>
 	
