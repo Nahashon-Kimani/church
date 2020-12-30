@@ -55,9 +55,9 @@
 					</span>
 				  </a>
 				  	<ul class="treeview-menu">
-						<li><a href="contact_app_chat.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>ALL</a></li>
-						<li><a href="extra_calendar.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>UP COMMING</a></li>
-						<li><a href="contact_app.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>ARCHIVE</a></li>
+						<li><a href="{{ route('admin.event.index') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>ALL</a></li>
+						<li><a href="{{ route('admin.event.upcoming') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>UP COMMING</a></li>
+						<li><a href="{{ route('admin.event.archieve') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>ARCHIVE</a></li>
 					</ul>
 				</li>			
 				<li class="treeview">

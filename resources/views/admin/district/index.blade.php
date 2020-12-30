@@ -65,7 +65,7 @@
                                        @if ($district->deacon_in_charge == null)
                                          --
                                         @else
-                                            {{ $district->user->name }}
+                                            {{ $district->deconInCharge->name }}
                                         @endif
                                     </td>
                                   <td>{{ $district->user->name }}</td>

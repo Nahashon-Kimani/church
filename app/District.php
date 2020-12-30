@@ -10,4 +10,9 @@ class District extends Model
     {
         return $this->belongsTo('App\User', 'created_by', 'id');
     }
+
+    public function deconInCharge()
+    {
+        return $this->belongsTo('App\User', 'deacon_in_charge', 'id');
+    }
 }

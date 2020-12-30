@@ -31,6 +31,9 @@ Route::get('archive/announcement', 'AnnouncementController@archive')->name('anno
 Route::get('upcoming/announcement', 'AnnouncementController@upcoming')->name('announcement.upcoming');
 Route::resource('service', 'ServiceController');
 Route::resource('district', 'DistrictController');
+Route::resource('event', 'EventController');
+Route::get('upcoming/event','EventController@upcoming')->name('event.upcoming');
+Route::get('archieve/event','EventController@archieve')->name('event.archieve');
 
 
 });
