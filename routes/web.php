@@ -34,7 +34,7 @@ Route::resource('district', 'DistrictController');
 Route::resource('event', 'EventController');
 Route::get('upcoming/event','EventController@upcoming')->name('event.upcoming');
 Route::get('archieve/event','EventController@archieve')->name('event.archieve');
-
+Route::resource('theme', 'ThemeController');
 
 });
 Route::group(['as'=>'members.','prefix'=>'members', 'namespace'=>'Members','middleware'=>['auth','members']], function(){

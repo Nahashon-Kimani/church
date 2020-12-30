@@ -22,6 +22,8 @@
 	<link rel="stylesheet" href="{{ asset('../eduadmin/assets/css/style.css ') }}">
 	<link rel="stylesheet" href="{{ asset('../eduadmin/assets/css/skin_color.css ') }}">
 	<link rel="stylesheet" href="{{ asset('../eduadmin/assets/vendor_components/datatable/datatables.min.css') }}">
+	{{-- <link rel="stylesheet" href="{{ asset('../eduadmin/assets/vendor_components/summer-note/summernote.min.css') }}"> --}}
+	{{-- <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.css" rel="stylesheet"> --}}
      
   </head>
 
@@ -664,7 +666,29 @@
 		$('.selects').select2();
 		});
 	</script>
+
+	{{-- {{-- CK Editor  --}}
+	<script src="{{ asset('../eduadmin/assets/vendor_components/ckeditor/ckeditor.js') }}"></script> 
+	{{-- <script src="https://cdn.ckeditor.com/ckeditor5/24.0.0/classic/ckeditor.js"></script> --}}
+	<script>
+        ClassicEditor
+            .create( document.querySelector( '.editor' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+	</script>--}}
 	
+	{{-- Summernote --}}
+	<script src="{{ asset('../eduadmin/assets/vendor_components/summer-note/summernote.min.js') }}"></script>	
+	<script>
+		$(document).ready(function() {
+		$('.summernote').summernote({
+			tabsize: 2,
+        	height: 100
+		});
+		});
+		
+	</script>
 	
 </body>
 
