@@ -28,7 +28,7 @@
 <body class="hold-transition light-skin sidebar-mini theme-primary fixed">
 	
 <div class="wrapper">
-  <div id="loader"></div>
+  <div id="loader"></div> 
 	
  <header class="main-header">
 	<div class="d-flex align-items-center logo-box justify-content-start">
@@ -658,9 +658,14 @@
 	<script src="{{ asset('../eduadmin/assets/js/pages/advanced-form-element.js' ) }}"></script>
 	<script src="{{ asset('../eduadmin/assets/vendor_components/dropzone/dropzone.js ') }}"></script>
 	
+	{{-- Select 2 --}}
+	<script>
+		$(document).ready(function() {
+		$('.selects').select2();
+		});
+	</script>
 	
 	
 </body>
 
-<!-- Mirrored from www.multipurposethemes.com/admin/eduadmin-template/main-semidark/index3.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 21 Dec 2020 10:14:05 GMT -->
 </html>

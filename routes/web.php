@@ -30,6 +30,8 @@ Route::resource('announcement', 'AnnouncementController');
 Route::get('archive/announcement', 'AnnouncementController@archive')->name('announcement.archive');
 Route::get('upcoming/announcement', 'AnnouncementController@upcoming')->name('announcement.upcoming');
 Route::resource('service', 'ServiceController');
+Route::resource('district', 'DistrictController');
+
 
 });
 Route::group(['as'=>'members.','prefix'=>'members', 'namespace'=>'Members','middleware'=>['auth','members']], function(){
