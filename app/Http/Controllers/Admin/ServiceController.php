@@ -48,6 +48,7 @@ class ServiceController extends Controller
         $service = new Service();
         $service->created_by = $request->created_by;
         $service->name = $request->name;
+        $service->slug = $request->name;
         $service->start_time = $request->start_time;
         $service->ending_time = $request->end_time;
         $service->save();
@@ -91,6 +92,7 @@ class ServiceController extends Controller
         $service = Service::findOrFail($id);
         $service->created_by = $request->created_by;
         $service->name = $request->name;
+        $service->slug = $request->name;
         $service->start_time = $request->start_time;
         $service->ending_time = $request->end_time;
         $service->save();

@@ -46,6 +46,7 @@ class ThemeController extends Controller
 
         $theme = new Theme();
         $theme->verse = $request->verse;
+        $theme->slug = $request->verse;
         $theme->narration = $request->narration;
         $theme->spiritual_year = $request->year;
         $theme->status = 'Active';
@@ -92,6 +93,7 @@ class ThemeController extends Controller
     {
         $theme = Theme::findOrFail($id);
         $theme->verse = $request->verse;
+        $theme->slug = $request->verse;
         $theme->narration = $request->narration;
         $theme->spiritual_year = $request->year;
         $theme->status = $request->status;

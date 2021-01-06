@@ -49,6 +49,7 @@ class EventController extends Controller
 
         $event = new Event();
         $event->title = $request->title;
+        $event->slug = $request->title;
         $event->created_by = $request->created_by;
         $event->location = $request->location;
         $event->assign_to = $request->assigned_to;
@@ -98,6 +99,7 @@ class EventController extends Controller
     {
         $event = Event::find($id);
         $event->title = $request->title;
+        $event->slug = $request->title;
         $event->created_by = $request->created_by;
         $event->location = $request->location;
         $event->assign_to = $request->assigned_to;

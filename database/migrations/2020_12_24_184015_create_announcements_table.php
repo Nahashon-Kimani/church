@@ -17,6 +17,7 @@ class CreateAnnouncementsTable extends Migration
             $table->id();
             $table->bigInteger('created_by')->unsigned();
             $table->string('title');
+            $table->string('slug');
             $table->text('desc');
             $table->date('start_date');
             $table->date('stop_date');

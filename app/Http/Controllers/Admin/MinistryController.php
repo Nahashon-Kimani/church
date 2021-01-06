@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
-use App\District;
+use App\Ministry;
 use App\User;
 
-class DistrictController extends Controller
+class MinistryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,10 +17,9 @@ class DistrictController extends Controller
      */
     public function index()
     {
-        $districts = District::latest()->get();
-        $noOfDistricts = District::all()->count();
-        $users = User::latest()->get();
-        return view('admin.district.index', compact('districts', 'noOfDistricts', 'users'));
+        $minitries = Ministry::latest()->get();
+        $noOfMinistry = Ministry::count();
+        return view('admin.ministry.index', compact('minitries', 'noOfMinistry'));
     }
 
     /**
@@ -30,9 +29,9 @@ class DistrictController extends Controller
      */
     public function create()
     {
-       $districts = District::latest()->get();
-       $users = User::latest()->get();
-        return view('admin.district.create', compact('districts', 'users'));
+        $users = User::latest()->get();
+        $minitries = Ministry::latest()->get();
+        return view('admin.ministry.create', compact('minitries', 'users'));
     }
 
     /**
@@ -46,15 +45,15 @@ class DistrictController extends Controller
         $this->validate($request, [
             'name'=>'required'
         ]);
-        $district = new District();
-        $district->name = $request->name;
-        $district->slug = $request->name;
-        $district->deacon_in_charge	 = $request->decon_in_charge;
-        $district->created_by = $request->created_by;
-        $district->save();
+        $ministry = new Ministry();
+        $ministry->name = $request->name;
+        $ministry->slug = $request->name;
+        $ministry->created_by = $request->created_by;
+        $ministry->current_leader = $request->leader;
+        $ministry->save();
 
-        Toastr::success('District Successfully Created' ,'Success');
-        return redirect()->route('admin.district.index');
+        Toastr::success('Ministry Successfully Saved' ,'Success');
+        return redirect()->route('admin.ministry.index');
     }
 
     /**
@@ -65,7 +64,9 @@ class DistrictController extends Controller
      */
     public function show($id)
     {
-        //
+        $ministry = Ministry::findOrFail($id);
+        $minitries = Ministry::latest()->get();
+        return view('admin.ministry.show', compact('ministry', 'minitries'));
     }
 
     /**
@@ -76,9 +77,9 @@ class DistrictController extends Controller
      */
     public function edit($id)
     {
+        $ministry = Ministry::findOrFail($id);
         $users = User::latest()->get();
-        $district = District::findOrFail($id);
-        return view('admin.district.edit', compact('district', 'users'));
+        return view('admin.ministry.edit', compact('ministry', 'users'));
     }
 
     /**
@@ -90,18 +91,15 @@ class DistrictController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'name'=>'required'
-        ]);
-        $district = District::findOrFail($id);
-        $district->name = $request->name;
-        $district->slug = $request->name;
-        $district->deacon_in_charge	 = $request->decon_in_charge;
-        $district->created_by = $request->created_by;
-        $district->save();
+        $ministry = Ministry::findOrFail($id);
+        $ministry->name = $request->name;
+        $ministry->slug = $request->name;
+        $ministry->created_by = $request->created_by;
+        $ministry->current_leader = $request->leader;
+        $ministry->save();
 
-        Toastr::success('District Updated Successfully' ,'Success');
-        return redirect()->route('admin.district.index');
+        Toastr::success('Ministry Updated Successfully' ,'Success');
+        return redirect()->route('admin.ministry.show', $id);
     }
 
     /**

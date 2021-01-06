@@ -50,6 +50,7 @@ class AnnouncementController extends Controller
         $announcement = new Announcement();
         $announcement->created_by = $request->created_by;
         $announcement->title = $request->title;
+        $announcement->slug = $request->title;
         $announcement->start_date = $request->start_date;
         $announcement->stop_date = $request->stop_date;
         $announcement->start_time = $request->start_time;
@@ -97,6 +98,7 @@ class AnnouncementController extends Controller
         $announcement = Announcement::findOrFail($id);
         $announcement->created_by = $request->created_by;
         $announcement->title = $request->title;
+        $announcement->slug = $request->title;
         $announcement->start_date = $request->start_date;
         $announcement->stop_date = $request->stop_date;
         $announcement->start_time = $request->start_time;

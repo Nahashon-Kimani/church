@@ -17,6 +17,7 @@ class CreateEventsTable extends Migration
             $table->id();
             $table->bigInteger('created_by')->unsigned();
             $table->string('title');
+            $table->string('slug');
             $table->string('details');
             $table->string('location')->default('PCEA Kayole Church');
             $table->string('time');

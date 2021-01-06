@@ -16,6 +16,7 @@ class CreateThemesTable extends Migration
         Schema::create('themes', function (Blueprint $table) {
             $table->id();
             $table->string('verse');
+            $table->string('slug');
             $table->text('narration');
             $table->string('spiritual_year');
             $table->string('status');

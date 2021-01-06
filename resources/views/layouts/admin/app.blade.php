@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   
-<!-- Mirrored from www.multipurposethemes.com/admin/eduadmin-template/main-semidark/index3.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 21 Dec 2020 10:14:05 GMT -->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
