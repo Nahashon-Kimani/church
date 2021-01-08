@@ -30,7 +30,7 @@
 			  <div class="box">
 				<div class="box-header with-border">
 				  <h3 class="box-title">Hover Export Data Table</h3>
-				  <h6 class="box-subtitle">Export data to Copy, CSV, Excel, PDF & Print</h6>
+				  <a href="{{ route('admin.members.create') }}" class="btn btn-info px-5 pull-right"><i class="fa fa-user"></i> Register Member</a>
 				</div>
 				<!-- /.box-header -->
 				<div class="box-body">

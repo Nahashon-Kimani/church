@@ -18,6 +18,7 @@
 					</a>
 					<ul class="treeview-menu">
 						<li><a href="{{ route('admin.dashboard') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>HOME</a></li>
+						<li><a href="{{ route('admin.members.index') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>MEMBERS</a></li>
 					</ul>
 				  </li>
 				<li class="treeview">
