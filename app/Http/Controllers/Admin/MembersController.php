@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
+use App\District;
 
 class MembersController extends Controller
 {
@@ -29,7 +30,8 @@ class MembersController extends Controller
      */
     public function create()
     {
-        return view('admin.members.create');
+        $districts = District::latest()->get();
+        return view('admin.members.create', compact('districts'));
     }
 
     /**
@@ -53,11 +55,12 @@ class MembersController extends Controller
        'image' => 'required|mimes:jpeg,bmp,png,jpg'
        
        ]);
-         $image = $request->file('image');
-        $slug = ($request->fullname);
+        $image = $request->file('image');
+        // $slug = ($request->fullname);
+        $slug = $request->firstname . ' '. $request->lastname;
         if(isset($image))
         {
-//            make unipue name for image
+//            make unique name for image
             $currentDate = Carbon::now()->toDateString();
             $imageName  = $slug.'-'.$currentDate.'-'.uniqid().'.'.$image->getClientOriginalExtension();
 
@@ -92,8 +95,9 @@ class MembersController extends Controller
        $member->slug = $slug;
        $member->image = $imageName;
        $member->save();
+       
        Toastr::success('Member Successfully Saved' ,'Success');
-        return redirect()->route('admin.members.index');
+       return redirect()->route('admin.members.index');
        
     }
 

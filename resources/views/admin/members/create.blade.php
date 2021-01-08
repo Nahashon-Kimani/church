@@ -459,15 +459,11 @@
 									  <div class="col-md-8">
 										<div class="form-group">
 							<label>Multiple</label>
-							<select class="form-control select2" name="groups[]" multiple="multiple" data-placeholder="Select a State"
+							<select class="form-control select2" name="groups[]" class="selects" multiple="multiple" data-placeholder="District"
 									style="width: 100%;">
-							  <option>Alabama</option>
-							  <option>Alaska</option>
-							  <option>California</option>
-							  <option>Delaware</option>
-							  <option>Tennessee</option>
-							  <option>Texas</option>
-							  <option>Washington</option>
+									@foreach ($districts as $district)
+										<option value="{{ $district->id }}">{{ $district->name }}</option>
+									@endforeach
 							</select>
 						  </div>
 									  </div>

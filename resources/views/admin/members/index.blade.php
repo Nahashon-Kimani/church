@@ -57,7 +57,9 @@
 								<td>{{ $member->address }}</td>
 								<td>{{ $member->join_date }}</td>
 								<td>
-									<a href=""><span class="glyphicon glyphicon-edit"></span>
+									<a href="{{ route('admin.members.show', $member->id) }}" class="btn btn-info px-5">
+										<span class="glyphicon glyphicon-eye-open"></span>
+									</a>
 					
 								</td>
 							</tr>

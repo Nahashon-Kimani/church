@@ -630,7 +630,8 @@
 	<script src="{{ asset('../eduadmin/assets/js/pages/calendar.js ' ) }}"></script>
 
 	{{-- Font awesome 5 --}}
-	<script src="https://kit.fontawesome.com/c99e7cdcbd.js" crossorigin="anonymous"></script>
+	{{-- <script src="https://kit.fontawesome.com/c99e7cdcbd.js" crossorigin="anonymous"></script> --}}
+	<script src="{{ asset('../eduadmin/assets/icons/font-awesome/js/font-awesome.js ' ) }}"></script>
 
     <script src="{{ asset('../eduadmin/assets/vendor_components/bootstrap-select/dist/js/bootstrap-select.js ' ) }}"></script>
 	<script src="{{ asset('../eduadmin/assets/vendor_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.js ' ) }}"></script>
