@@ -55,8 +55,8 @@
                                   @endif
                                   {{-- other options --}}
                                   <option disabled>________________________</option>
-                                    @foreach ($users as $user)
-                                        <option value="{{ $user->id }}">{{ $user->name }}</option>
+                                    @foreach ($members as $member)
+                                        <option value="{{ $member->id }}">{{ $member->fullname }}</option>
                                     @endforeach
                                 </select>
                               </div>

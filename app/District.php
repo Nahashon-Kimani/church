@@ -13,6 +13,6 @@ class District extends Model
 
     public function deconInCharge()
     {
-        return $this->belongsTo('App\User', 'deacon_in_charge', 'id');
+        return $this->belongsTo('App\Member', 'deacon_in_charge', 'id');
     }
 }

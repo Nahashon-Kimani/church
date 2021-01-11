@@ -48,8 +48,8 @@
                                 <label>Current Leader</label>
                                 <select name="leader" class="form-control selects">
                                   <option selected disabled>-- Select --</option>
-                                    @foreach ($users as $user)
-                                        <option value="{{ $user->id }}">{{ $user->name }}</option>
+                                    @foreach ($members as $member)
+                                        <option value="{{ $member->id }}">{{ $member->fullname }}</option>
                                     @endforeach
                                 </select>
                               </div>

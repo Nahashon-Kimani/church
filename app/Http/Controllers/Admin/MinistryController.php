@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
 use App\Ministry;
-use App\User;
+use App\Member;
 
 class MinistryController extends Controller
 {
@@ -29,9 +29,9 @@ class MinistryController extends Controller
      */
     public function create()
     {
-        $users = User::latest()->get();
+        $members = Member::latest()->get();
         $minitries = Ministry::latest()->get();
-        return view('admin.ministry.create', compact('minitries', 'users'));
+        return view('admin.ministry.create', compact('minitries', 'members'));
     }
 
     /**
@@ -78,8 +78,8 @@ class MinistryController extends Controller
     public function edit($id)
     {
         $ministry = Ministry::findOrFail($id);
-        $users = User::latest()->get();
-        return view('admin.ministry.edit', compact('ministry', 'users'));
+        $members = Member::latest()->get();
+        return view('admin.ministry.edit', compact('ministry', 'members'));
     }
 
     /**

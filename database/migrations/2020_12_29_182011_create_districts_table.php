@@ -17,7 +17,7 @@ class CreateDistrictsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug');
-            $table->string('deacon_in_charge')->nullable();
+            $table->bigInteger('deacon_in_charge')->nullable()->unsigned();
             $table->bigInteger('created_by')->unsigned();
             $table->timestamps();
         });
@@ -25,6 +25,10 @@ class CreateDistrictsTable extends Migration
         Schema::table('districts', function (Blueprint $table) {
             $table->foreign('created_by')->references('id')->on('users')->onDelete('cascade');
         });
+
+        // Schema::table('districts', function (Blueprint $table) {
+        //     $table->foreign('deacon_in_charge')->references('id')->on('members')->onDelete('cascade');
+        // });
     }
 
     /**

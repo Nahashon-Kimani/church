@@ -60,7 +60,7 @@
                                     @if ($ministry->current_leader == NULL)
                                         <span class="badge badge-info text-uppercase">not assigned</span>
                                     @else
-                                        {{ $ministry->user->name }}
+                                        {{ $ministry->currentLeader->fullname }}
                                     @endif
                                   </td>
                                   <td>{{ $ministry->created_at->toFormattedDateString() }}</td>

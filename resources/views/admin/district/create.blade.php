@@ -49,8 +49,8 @@
                                     <label class="text-uppercase">Decon in charge</label>
                                     <select name="decon_in_charge" class="form-control selects">
                                       <option selected disabled>-- Select--</option>
-                                        @foreach ($users as $user)
-                                            <option value="{{ $user->id }}">{{ $user->name }}</option>
+                                        @foreach ($members as $member)
+                                            <option value="{{ $member->id }}">{{ $member->fullname }}</option>
                                         @endforeach
                                     </select>
                                   </div>

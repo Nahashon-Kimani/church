@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
 use App\District;
 use App\User;
+use App\Member;
 
 class DistrictController extends Controller
 {
@@ -31,8 +32,8 @@ class DistrictController extends Controller
     public function create()
     {
        $districts = District::latest()->get();
-       $users = User::latest()->get();
-        return view('admin.district.create', compact('districts', 'users'));
+       $members = Member::latest()->get();
+        return view('admin.district.create', compact('districts', 'members'));
     }
 
     /**
@@ -76,9 +77,9 @@ class DistrictController extends Controller
      */
     public function edit($id)
     {
-        $users = User::latest()->get();
+        $members = Member::latest()->get();
         $district = District::findOrFail($id);
-        return view('admin.district.edit', compact('district', 'users'));
+        return view('admin.district.edit', compact('district', 'members'));
     }
 
     /**

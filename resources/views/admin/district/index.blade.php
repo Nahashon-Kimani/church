@@ -65,14 +65,18 @@
                                        @if ($district->deacon_in_charge == null)
                                          --
                                         @else
-                                            {{ $district->deconInCharge->name }}
+                                            {{ $district->deconInCharge->fullname }}
                                         @endif
                                     </td>
                                   <td>{{ $district->user->name }}</td>
-                                  <td>{{ $district->created_at }}</td>
+                                  <td>{{ date('dS -F - Y', strtotime($district->created_at)) }}</td>{{-- H:i:s a --}}
                                   <td>
                                         <a href="{{ route('admin.district.edit', $district->id) }}" class="btn btn-info px-5">
-                                            <i class="fa fa-eye"></i> 
+                                            <i class="fa fa-edit"></i> 
+                                        </a>
+                                        
+                                        <a href="{{ route('admin.district.show', $district->id) }}" class="btn btn-primary px-5">
+                                            <i class="fa fa-eye"></i>
                                         </a>
                                   </td>
                               </tr>

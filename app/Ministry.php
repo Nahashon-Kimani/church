@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ministry extends Model
 {
-    public function user()
+    public function currentLeader()
     {
-        return $this->belongsTo('App\User', 'current_leader', 'id');
+        return $this->belongsTo('App\Member', 'current_leader', 'id');
     }
 }

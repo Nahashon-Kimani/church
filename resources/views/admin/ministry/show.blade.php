@@ -39,11 +39,11 @@
 				  <div class="box-header bg-info with-border text-center">
                     <h3 class="box-title text-white text-uppercase text-center m-5"><strong>{{ $ministry->id }}. {{ $ministry->name }} department</strong></h3>
                     <br> <br>
-                    <p class="h5 text-uppercase">Current Leader 
+                    <p class="h5 text-uppercase">Current Leader: 
                         @if ($ministry->current_leader == NULL)
                             <span class="badge badge-danger text-uppercase">not assigned</span>
                         @else
-                            {{ $ministry->user->name }}
+                            {{ $ministry->currentLeader->fullname }}
                         @endif
                     </p>
 				  </div>
