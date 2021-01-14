@@ -42,6 +42,7 @@ class MembersController extends Controller
      */
     public function store(Request $request)
     {
+        //return $request-> all();
         $this->validate($request, [
        'firstname' => 'required',
        'lastname' => 'required',

@@ -33,6 +33,20 @@
 						<li><a href="{{ route('admin.calendar') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>TODAY</a></li>
 					</ul>
 				  </li>
+				  <li class="treeview">
+					<a href="#">
+					  <i class="icon-Layout-grid"><span class="path1"></span><span class="path2"></span></i>
+					  <span>ATTENDANCE</span>
+					  <span class="pull-right-container">
+						<i class="fa fa-angle-right pull-right"></i>
+					  </span>
+					</a>
+					<ul class="treeview-menu">
+						<li><a href="{{ route('admin.attendance.index') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>TODAY</a></li>
+						<li><a href="{{ route('admin.attendance.allattendance') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>ALL</a></li>
+						<li><a href="{{ route('admin.attendance.index') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>LAST SUNDAY</a></li>
+					</ul>
+				  </li>
 				<li class="treeview">
 				  <a href="#">
 					<i span class="icon-Layout-grid"><span class="path1"></span><span class="path2"></span></i>

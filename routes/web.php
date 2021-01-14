@@ -36,6 +36,8 @@ Route::get('upcoming/event','EventController@upcoming')->name('event.upcoming');
 Route::get('archieve/event','EventController@archieve')->name('event.archieve');
 Route::resource('theme', 'ThemeController');
 Route::resource('ministry', 'MinistryController');
+Route::resource('attendance', 'AttendanceController');
+Route::get('allattendance/attendance', 'AttendanceController@allattendance')->name('attendance.allattendance');
 
 });
 Route::group(['as'=>'members.','prefix'=>'members', 'namespace'=>'Members','middleware'=>['auth','members']], function(){
