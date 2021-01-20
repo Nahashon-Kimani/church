@@ -61,6 +61,7 @@
 					<li><a href="contact_app_chat.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>QUARTELY</a></li>
 					<li><a href="extra_taskboard.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>MID YEAR</a></li>
 					<li><a href="mailbox.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>ANNUALLY</a></li>
+					<li><a href="{{ route('admin.givingcategory.index') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>GIVING CATEGORY</a></li>
 				  </ul>
 				</li>
 				{{-- <li class="header">Components & UI </li> --}}

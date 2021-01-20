@@ -43,6 +43,7 @@ Route::resource('family', 'FamilyController');
 Route::get('familygrid/family', 'FamilyController@familygrid')->name('family.familygrid');
 Route::get('activefamily/family', 'FamilyController@activefamily')->name('family.activefamily');
 Route::get('inactivefamily/family', 'FamilyController@inactivefamily')->name('family.inactivefamily');
+Route::resource('givingcategory', 'GivingCategoryController');
 
 });
 Route::group(['as'=>'members.','prefix'=>'members', 'namespace'=>'Members','middleware'=>['auth','members']], function(){
