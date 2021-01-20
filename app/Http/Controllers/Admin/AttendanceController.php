@@ -32,6 +32,17 @@ class AttendanceController extends Controller
         return view('admin.attendance.allattendance', compact('attendances', 'members', 'services'));
     }
 
+    //Last Sunday Attendance:     attendance.lastsundayattendance
+    public function lastsundayattendance()
+    {
+        // $dateDiff = date('Y-m-d') - 7;
+        // $attendances = Attendance::where('date', '=', (date('Y-m-d')-7))->get();
+        $attendances = Attendance::latest()->get();
+        $members = Member::all();
+        $services = Service::latest()->get();
+        return view('admin.attendance.lastsundayattendance', compact('attendances', 'members', 'services'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *

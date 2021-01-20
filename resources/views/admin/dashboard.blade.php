@@ -17,7 +17,7 @@
 									<img src="{{ asset('../eduadmin/assets/images/avatar2.png') }}" class="img-fluid max-w-250" alt="">
 									<div class="ml-30">
 										<h2 class="mb-10 text-capitalize">Welcome back, <strong>{{ Auth::user()->name }}</strong></h2>
-                                        <p class="mb-0 text-fade font-size-18">Today Services.</p>
+                                        <p class="mb-0 text-fade font-size-18">Today Total Attendance {{ $totalAttendance }}.</p>
 									</div>
 								</div>
 							</div>							
@@ -77,7 +77,7 @@
             <div class="row">
                 {{-- Today Attendance --}}
                 <div class="col-sm-5 col-12">
-                    <h4 class="title text-uppercase">Today service Attendance</h4>	
+                    <h4 class="title text-uppercase">Services List</h4>	
                     <div class="row">						
                         @foreach ($services as $service)
                             <div class="col-sm-6">
@@ -88,7 +88,7 @@
                                                 <div class="d-flex align-items-center pr-2 justify-content-between">							
                                                     
                                                     <h4 class="font-weight-500">
-                                                        {{ $service->name }}
+                                                        {{ $service->name }} 
                                                     </h4>						
                                                 </div>
                                                 <p class="h6 text-capitalize">
@@ -123,7 +123,11 @@
                 {{-- church services --}}
                 <div class="col-sm-7 col-12">
 					<div class="box">
-						<div class="box-header with-border"><h4 class="box-title text-uppercase">Today Services Attendance</h4></div>
+						<div class="box-header with-border">
+                            <h4 class="box-title text-uppercase">Today Services Attendance: Total 
+                                <span class="badge badge-pill badge-warning">{{ $totalAttendance }}</span>
+                            </h4>
+                        </div>
                         <div class="box-body px-0 pt-0 pb-10">
 						  <div class="media-list media-list-hover">
                               @foreach ($services as $service)

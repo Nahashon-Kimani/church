@@ -44,7 +44,7 @@
 					<ul class="treeview-menu">
 						<li><a href="{{ route('admin.attendance.index') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>TODAY</a></li>
 						<li><a href="{{ route('admin.attendance.allattendance') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>ALL</a></li>
-						<li><a href="{{ route('admin.attendance.index') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>LAST SUNDAY</a></li>
+						<li><a href="{{ route('admin.attendance.lastsundayattendance') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>LAST SUNDAY</a></li>
 					</ul>
 				  </li>
 				<li class="treeview">
@@ -100,6 +100,11 @@
 					  <i class="fa fa-angle-right pull-right"></i>
 					</span>
 				  </a>
+				  <ul class="treeview-menu">
+					<li><a href="{{ route('admin.family.index') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>ALL FAMILIES</a></li>
+					<li><a href="{{ route('admin.family.activefamily') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>ACTIVE FAMILIES</a></li>
+					<li><a href="{{ route('admin.family.inactivefamily') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>INACTIVE FAMILIES</a></li>
+				  </ul>
 				</li> 
 				<li class="header">SETTINGS</li>				 
 				<li class="treeview">
