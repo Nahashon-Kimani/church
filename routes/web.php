@@ -44,6 +44,11 @@ Route::get('familygrid/family', 'FamilyController@familygrid')->name('family.fam
 Route::get('activefamily/family', 'FamilyController@activefamily')->name('family.activefamily');
 Route::get('inactivefamily/family', 'FamilyController@inactivefamily')->name('family.inactivefamily');
 Route::resource('givingcategory', 'GivingCategoryController');
+Route::resource('collection', 'CollectionController');
+Route::get('allcollection/collection','CollectionController@allcollection')->name('collection.allcollection');
+Route::get('thismonth/collection', 'CollectionController@thismonth')->name('collection.thismonth');
+Route::get('annually/collection', 'CollectionController@annually')->name('collection.annually');
+Route::get('quartely/collection', 'CollectionController@quartely')->name('collection.quartely');
 
 });
 Route::group(['as'=>'members.','prefix'=>'members', 'namespace'=>'Members','middleware'=>['auth','members']], function(){

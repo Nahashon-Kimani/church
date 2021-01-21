@@ -56,11 +56,12 @@
 					</span>
 				  </a>
 				  <ul class="treeview-menu">
-					<li><a href="extra_calendar.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>TODAY</a></li>
-					<li><a href="contact_app.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>MONTH</a></li>
-					<li><a href="contact_app_chat.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>QUARTELY</a></li>
-					<li><a href="extra_taskboard.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>MID YEAR</a></li>
-					<li><a href="mailbox.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>ANNUALLY</a></li>
+					<li><a href="{{ route('admin.collection.index') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>TODAY</a></li>
+					<li><a href="{{ route('admin.collection.thismonth') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>THIS MONTH</a></li>
+					<li><a href="{{ route('admin.collection.quartely') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>QUARTELY</a></li>
+					{{-- <li><a href="extra_taskboard.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>MID YEAR</a></li> --}}
+					<li><a href="{{ route('admin.collection.annually') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>ANNUALLY</a></li>
+					<li><a href="{{ route('admin.collection.allcollection') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>ALL TIMES</a></li>
 					<li><a href="{{ route('admin.givingcategory.index') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>GIVING CATEGORY</a></li>
 				  </ul>
 				</li>
