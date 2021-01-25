@@ -51,10 +51,11 @@ class CollectionController extends Controller
     // 3 Months Report
     public function quartely()
     {
-        $end3 = date('Y-m-d')->subMonth(3);
+        // $end3 = date('Y-m-d')->subMonth(3);
+        $end3 = date('Y-m-d');
         $today = date('Y-m-d');
-        $collections = Collection::whereBetween('date', '=', [$end3, $today])->latest()->get();
-        $totalCollections = Collection::whereBetween('date', '=', [$end3, $today])->sum('amount');
+        $collections = Collection::latest()->get();
+        $totalCollections = Collection::sum('amount');
         return view('admin.collection.index', compact('collections', 'totalCollections'));
     }
     /**

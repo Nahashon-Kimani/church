@@ -46,7 +46,6 @@ class MembersController extends Controller
         $this->validate($request, [
        'firstname' => 'required',
        'lastname' => 'required',
-       'fullname' => 'required',
        'gender' => 'required',
        'phonenumber' => 'required',
        'kin_contact' => 'required',
@@ -79,7 +78,7 @@ class MembersController extends Controller
        $member= new Member();
        $member->firstname = $request->firstname;
        $member->lastname = $request->lastname;
-       $member->fullname = $request->fullname;
+       $member->fullname = $request->firstname. ' '. $request->lastname;
        $member->gender = $request->gender;
        $member->phonenumber = $request->phonenumber;
        $member->kin_contact = $request->kin_contact;

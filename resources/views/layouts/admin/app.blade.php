@@ -665,6 +665,14 @@
 		});
 	</script>
 
+	<script>
+		$(document).ready(function() {
+		$('.mySelect2').select2({
+			dropdownParent: $('#myModal');
+		});
+		});
+	</script>
+
 	{{-- {{-- CK Editor  --}}
 	<script src="{{ asset('../eduadmin/assets/vendor_components/ckeditor/ckeditor.js') }}"></script> 
 	{{-- <script src="https://cdn.ckeditor.com/ckeditor5/24.0.0/classic/ckeditor.js"></script> --}}

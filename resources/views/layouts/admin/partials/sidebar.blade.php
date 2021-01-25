@@ -119,7 +119,7 @@
 				  </a>
 				  <ul class="treeview-menu">
 					<li><a href="{{ route('admin.service.index') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>CHURCH SERVICES</a></li>
-					<li><a href="ecommerce_cart.html"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>ROLES </a></li>
+					<li><a href="{{ route('admin.dashboard') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>ROLES </a></li>
 					<li><a href="{{ route('admin.district.index') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>DISTRICTS</a></li>
 					<li><a href="{{ route('admin.theme.index') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>THEMES </a></li>
 					<li><a href="{{ route('admin.ministry.index') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>MINISTRIES </a></li>

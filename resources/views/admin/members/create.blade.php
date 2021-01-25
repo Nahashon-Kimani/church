@@ -49,10 +49,10 @@
 										  <input type="text" name="lastname" class="form-control" placeholder="Last Name">
 										</div>
 										
-										<div class="form-group">
+										{{-- <div class="form-group">
 										  <label >Prefered Name</label>
 										  <input type="text" name="fullname" class="form-control" placeholder="Prefered Name">
-										</div>
+										</div> --}}
 									  </div>
 
 									

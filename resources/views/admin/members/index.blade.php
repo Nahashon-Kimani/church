@@ -8,13 +8,13 @@
 		<div class="content-header">
 			<div class="d-flex align-items-center">
 				<div class="mr-auto">
-					<h3 class="page-title">Data Tables</h3>
+					<h3 class="page-title">Church Members</h3>
 					<div class="d-inline-block align-items-center">
 						<nav>
 							<ol class="breadcrumb">
 								<li class="breadcrumb-item"><a href="#"><i class="mdi mdi-home-outline"></i></a></li>
-								<li class="breadcrumb-item" aria-current="page">Tables</li>
-								<li class="breadcrumb-item active" aria-current="page">Data Tables</li>
+								<li class="breadcrumb-item" aria-current="page">Home</li>
+								<li class="breadcrumb-item active" aria-current="page">Church Members</li>
 							</ol>
 						</nav>
 					</div>
@@ -28,9 +28,11 @@
 		  <div class="row">
 			<div class="col-12">
 			  <div class="box">
-				<div class="box-header with-border">
-				  <h3 class="box-title">Hover Export Data Table</h3>
-				  <a href="{{ route('admin.members.create') }}" class="btn btn-info px-5 pull-right"><i class="fa fa-user"></i> Register Member</a>
+				<div class="box-header bg-info with-border">
+				  <h3 class="box-title text-uppercase">Member List</h3>
+				  <a href="{{ route('admin.members.create') }}" class="btn btn-danger px-5 text-uppercase pull-right">
+					<i class="fa fa-plus"></i> Register Member
+				  </a>
 				</div>
 				<!-- /.box-header -->
 				<div class="box-body">

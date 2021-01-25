@@ -17,7 +17,9 @@
 									<img src="{{ asset('../eduadmin/assets/images/avatar2.png') }}" class="img-fluid max-w-250" alt="">
 									<div class="ml-30">
 										<h2 class="mb-10 text-capitalize">Welcome back, <strong>{{ Auth::user()->name }}</strong></h2>
-                                        <p class="mb-0 text-fade font-size-18">Today Total Attendance {{ $totalAttendance }}.</p>
+                                        <p class="mb-0 text-fade font-size-18">Today Total Attendance {{ number_format($totalAttendance, 2, '.', ',') }}.</p>
+                                        <p class="mb-0 text-fade font-size-18 lead">Today Total Collections {{ number_format($todayCollections, 2) }}.</p>
+                                        <p class="mb-0 text-fade font-size-18">Year so far Collections: Ksh. {{ number_format($yearCollections, 2) }}.</p>
 									</div>
 								</div>
 							</div>							

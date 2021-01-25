@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Service;
 use App\Event;
 use App\Attendance;
+use App\Collection;
 
 class DashboardController extends Controller
 {
@@ -20,8 +21,13 @@ class DashboardController extends Controller
         $totalAttendance = Attendance::where('date', '=', date('Y-m-d'))->count();
         $services1 = Attendance::distinct()->get();
 
+        // Collections
+        $yearCollections = Collection::whereYear('date', '=', date('Y'))->sum('amount');
+        $todayCollections = Collection::where('date', '=', date('Y-m-d'))->sum('amount');
+
         return view('admin.dashboard', 
-            compact('services', 'events', 'todayEvents', 'upComingEvents', 'totalAttendance'));
+            compact('services', 'events', 'todayEvents', 'upComingEvents', 'totalAttendance',
+             'yearCollections', 'todayCollections'));
     }
 
     public function calendar()

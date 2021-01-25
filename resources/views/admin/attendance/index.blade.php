@@ -28,11 +28,11 @@
         <div class="row">
           <div class="col-12">
             <div class="box">
-              <div class="box-header with-border">
+              <div class="box-header bg-info with-border">
                 <h3 class="box-title text-uppercase">Today ({{ date('dS-F-Y') }}) church attendance</h3>
-                    <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#myModal">
-					    NEW ATTENDANCE
-				  </button>
+                    <button type="button" class="btn btn-danger float-right" data-toggle="modal" data-target="#myModal">
+					              <i class="fa fa-plus"></i> NEW ATTENDANCE
+				            </button>
               </div>
               <!-- /.box-header -->
               <div class="box-body">
@@ -93,7 +93,7 @@
 </div>
 
 
-<div id="myModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div id="myModal" class="modal fade bs-example-modal-lg"  role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header bg-gradient-info-dark text-white">
@@ -107,8 +107,7 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label>MEMBER NAME</label>
-                        <select name="member_id" class="form-control selects">
-                            <option value="selected disabled">-- Select--</option>
+                        <select name="member_id" class="form-control mySelect2">
                                 @foreach ($members as $member)
                                     <option value="{{ $member->id }}">{{ $member->fullname }}</option>
                                 @endforeach
@@ -118,8 +117,7 @@
                         <div class="col-sm-6">
                           <div class="form-group">
                             <label>SERVICE</label>
-                            <select name="service_id" class="form-control selects">
-                                <option value="selected disabled">-- Select--</option>
+                            <select name="service_id" class="form-control mySelect2">
                                 @foreach ($services as $service)
                                     <option value="{{ $service->id }}">{{ $service->name }}</option>
                                 @endforeach
