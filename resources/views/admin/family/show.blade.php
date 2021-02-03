@@ -35,7 +35,12 @@
   
                     <div class="box-body">
                      <h1 class="h1 text-white text-center text-lg display-1 text-uppercase">
-                        <strong> F</strong>
+                        <strong>
+                            @php
+                                $initial = $family->member->fullname;
+                                echo $initial[0];
+                            @endphp
+                        </strong>
                      </h1>
                     </div>
                   </div>
@@ -133,23 +138,33 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>NAME</th>
+                                    <th>GENDER</th>
                                     <th>TELEPHONE</th>
                                     <th>EMAIL</th>
-                                    <th>DATE JOINED</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {{-- @foreach ($collection as $item)
-                                    
-                                @endforeach --}}
+                                @foreach ($familyMembers as $key=>$familyMember)
+                                    <tr>
+                                        <td>{{ $key + 1 }}</td>
+                                        <td>
+                                            <a href="{{ route('admin.members.show', $familyMember->member_id) }}" target="_blank">
+                                                {{ $familyMember->memberName->fullname }}
+                                            </a>
+                                        </td>
+                                        <td>{{ Str::ucfirst($familyMember->memberName->gender) }}</td>
+                                        <td>{{ $familyMember->memberName->phonenumber }}</td>
+                                        <td>{{ $familyMember->memberName->email }}</td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                             <tfoot>
                                 <tr>
                                     <th>ID</th>
                                     <th>NAME</th>
+                                    <th>GENDER</th>
                                     <th>TELEPHONE</th>
                                     <th>EMAIL</th>
-                                    <th>DATE JOINED</th>
                                 </tr>
                             </tfoot>
                           </table>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Brian2694\Toastr\Facades\Toastr;
 use App\MemberFamily;
 
 class MemberFamilyController extends Controller
@@ -45,7 +46,8 @@ class MemberFamilyController extends Controller
         $familyMember->created_by = $request->user_id;
         $familyMember->save();
 
-        
+        Toastr::success('Giving Category Successfully Saved' ,'Success');
+        return redirect()->back();
     }
 
     /**

@@ -15,5 +15,10 @@ class Family extends Model
     {
         return $this->belongsTo('App\Member', 'family_name', 'id');
     }
+
+    public function memberName()
+    {
+        return $this->belongsTo('App\Member', 'member_id', 'id');
+    }
     
 }

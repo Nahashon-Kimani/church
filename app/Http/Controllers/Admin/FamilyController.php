@@ -99,8 +99,8 @@ class FamilyController extends Controller
         $family = Family::findOrFail($id);
         $families = Family::latest()->limit(3)->get();
         $members = Member::latest()->get();
-        $familyMembers = MemberFamily::where('');
-        return view('admin.family.show', compact('family', 'families', 'members'));
+        $familyMembers = MemberFamily::where('family_id', '=', $id)->latest()->get();
+        return view('admin.family.show', compact('family', 'families', 'members', 'familyMembers'));
     }
 
     /**
