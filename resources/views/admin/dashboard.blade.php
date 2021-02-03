@@ -17,7 +17,7 @@
 									<img src="{{ asset('../eduadmin/assets/images/avatar2.png') }}" class="img-fluid max-w-250" alt="">
 									<div class="ml-30">
 										<h2 class="mb-10 text-capitalize">Welcome back, <strong>{{ Auth::user()->name }}</strong></h2>
-                                        <p class="mb-0 text-fade font-size-18">Today Total Attendance {{ number_format($totalAttendance, 2, '.', ',') }}.</p>
+                                        <p class="mb-0 text-fade font-size-18">Today Total Attendance {{ number_format($totalAttendance, 0, '.', ',') }}.</p>
                                         <p class="mb-0 text-fade font-size-18 lead">Today Total Collections {{ number_format($todayCollections, 2) }}.</p>
                                         <p class="mb-0 text-fade font-size-18">Year so far Collections: Ksh. {{ number_format($yearCollections, 2) }}.</p>
 									</div>
@@ -133,7 +133,7 @@
                         <div class="box-body px-0 pt-0 pb-10">
 						  <div class="media-list media-list-hover">
                               @foreach ($services as $service)
-                                <a class="media media-single" href="#">
+                                <a class="media media-single" href="{{ route('admin.attendance.index') }}">
                                     <h4 class="w-50 text-gray font-weight-500">{{ date('h:i A', strtotime($service->start_time)) }}</h4>
                                     <div class="media-body pl-15 bl-5 rounded border-primary">
                                     <p>{{ $service->name }}</p>

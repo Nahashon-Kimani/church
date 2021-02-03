@@ -29,7 +29,7 @@
               <div class="col-sm-12 col-12">
                     <div class="box">
                       <div class="box-header bg-info text-white with-border">
-                        <h4 class="box-title">Sample form 1</h4>
+                        <h4 class="box-title text-uppercase">New Theme</h4>
                       </div>
                       <!-- /.box-header -->
                       <form class="form" action="{{ route('admin.theme.store') }}" method="POST">
@@ -44,25 +44,26 @@
                                     <label>VERSE</label>
                                     <input type="text" name="verse" class="form-control" placeholder="Psalms 100:4-5 ">
                                   </div>
-                                </div>
-                                <div class="col-md-6">
+
                                   <div class="form-group">
                                     <label>SPIRITUAL YEAR</label>
                                     <input type="text" name="year" class="form-control" placeholder="{{ date('Y') }} / {{ date('Y')+1 }}">
                                   </div>
                                 </div>
-                              </div>
-                              <div class="form-group">
-                                <label>VERSE NARRATION</label>
-                                <textarea rows="5"  name="narration" class="form-control" placeholder="Verse Narration"></textarea>
+                                <div class="col-md-6">
+                                  <div class="form-group">
+                                    <label>VERSE NARRATION</label>
+                                    <textarea rows="5"  name="narration" class="form-control" placeholder="Verse Narration"></textarea>
+                                  </div>
+                                </div>
                               </div>
                           </div>
                           <!-- /.box-body -->
                           <div class="box-footer">
-                              <button type="button" class="btn btn-rounded btn-warning btn-outline mr-1">
+                              <button type="button" class="btn btn-rounded btn-danger btn-outline mr-1">
                                 <i class="ti-trash"></i> Cancel
                               </button>
-                              <button type="submit" class="btn btn-rounded btn-primary btn-outline">
+                              <button type="submit" class="btn btn-rounded btn-info btn-outline">
                                 <i class="ti-save-alt"></i> Save
                               </button>
                           </div>  

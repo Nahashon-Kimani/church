@@ -28,11 +28,11 @@
         <div class="row">
           <div class="col-12">
             <div class="box">
-              <div class="box-header with-border">
+              <div class="box-header bg-info with-border">
                 <h3 class="box-title text-uppercase">
-                    Upcoming Announcements
+                    Upcoming Announcements <span class="badge badge-pill badge-danger">{{ $totalUpcoming }}</span>
                 </h3>
-                <a href="{{ route('admin.announcement.create') }}" class="waves-effect waves-light btn btn-info mb-5 px-5 float-right">
+                <a href="{{ route('admin.announcement.create') }}" class="btn btn-danger waves-effect waves-light mb-5 px-5 float-right">
                     <i class="fa fa-plus"></i> New Announcements
                 </a>
                 {{-- <h6 class="box-subtitle">Export data to Copy, CSV, Excel, PDF &amp; Print</h6> --}}

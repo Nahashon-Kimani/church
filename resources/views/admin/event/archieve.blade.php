@@ -31,14 +31,14 @@
         <div class="row">
           <div class="col-12">
             <div class="box">
-              <div class="box-header with-border">
+              <div class="box-header bg-info with-border">
                 <h3 class="box-title text-uppercase">
-                    all events
+                    Past events
                 </h3>
-                <a href="{{ route('admin.event.create') }}" class="waves-effect waves-light btn btn-primary-light mb-5 px-5 float-right text-uppercase">
+                <a href="{{ route('admin.event.create') }}" class="waves-effect waves-light btn btn-danger mb-5 px-5 float-right text-uppercase">
                     <i class="fa fa-plus"></i> New event
                 </a>
-                <h6 class="box-subtitle">Export data to Copy, CSV, Excel, PDF &amp; Print</h6>
+                {{-- <h6 class="box-subtitle">Export data to Copy, CSV, Excel, PDF &amp; Print</h6> --}}
               </div>
               <!-- /.box-header -->
               <div class="box-body">

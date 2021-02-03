@@ -30,12 +30,12 @@
         <div class="row">
            <div class="col-12">
            <div class="box">
-              <div class="box-header with-border">
+              <div class="box-header bg-info with-border">
                 <h3 class="box-title">CHURCH SERVICES
                   </h3>
-                  <button type="button" class="btn btn-primary text-uppercase float-right" data-toggle="modal" data-target="#serviceModal">
-					<i class="fa fa-plus"></i> New Service
-				  </button>
+                  <button type="button" class="btn btn-danger text-uppercase float-right" data-toggle="modal" data-target="#serviceModal">
+                      <i class="fa fa-plus"></i> New Service
+                  </button>
               </div>
               <!-- /.box-header -->
               <div class="box-body">
@@ -60,7 +60,7 @@
                                   <td>{{ date('h:i A', strtotime($service->ending_time)) }}</td>
                                   <td>{{ $service->user->name }}</td>
                                   <td>
-                                    <a href="{{ route('admin.service.edit', $service->id) }}" class="btn btn-success px-5">
+                                    <a href="{{ route('admin.service.edit', $service->id) }}" class="btn btn-info px-5">
                                       <i class="fa fa-edit"></i>
                                     </a>
                                   </td>

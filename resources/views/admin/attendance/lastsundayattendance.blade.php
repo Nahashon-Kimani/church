@@ -29,8 +29,8 @@
           <div class="col-12">
             <div class="box">
               <div class="box-header with-border">
-                <h3 class="box-title text-uppercase">Today ({{ date('dS-F-Y') }}) church attendance</h3>
-                    <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#myModal">
+                <h3 class="box-title text-uppercase bg-info">Today ({{ date('dS-F-Y') }}) church attendance</h3>
+                    <button type="button" class="btn btn-danger float-right" data-toggle="modal" data-target="#myModal">
 					    NEW ATTENDANCE
 				  </button>
               </div>

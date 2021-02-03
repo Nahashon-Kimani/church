@@ -8,6 +8,7 @@ use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Support\Facades\Auth;
 use App\Member;
 use App\Family;
+use App\MemberFamily;
 
 class FamilyController extends Controller
 {
@@ -96,8 +97,10 @@ class FamilyController extends Controller
     public function show($id)
     {
         $family = Family::findOrFail($id);
-        $families = Family::latest()->get();
-        return view('admin.family.show', compact('family', 'families'));
+        $families = Family::latest()->limit(3)->get();
+        $members = Member::latest()->get();
+        $familyMembers = MemberFamily::where('');
+        return view('admin.family.show', compact('family', 'families', 'members'));
     }
 
     /**
@@ -108,7 +111,8 @@ class FamilyController extends Controller
      */
     public function edit($id)
     {
-        //
+        $family = Family::findOrFail($id);
+        return view('admin.family.edit', compact('family'));
     }
 
     /**

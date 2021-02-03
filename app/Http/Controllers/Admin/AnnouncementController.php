@@ -124,14 +124,16 @@ class AnnouncementController extends Controller
     public function archive()
     {
         $todayDate = date('Y-m-d');
+        $totalArchieve =  Announcement::where('start_date', '<', $todayDate)->count();
         $announcements =  Announcement::where('start_date', '<', $todayDate)->latest()->get();
-        return view('admin.announcement.archieve', compact('announcements'));
+        return view('admin.announcement.archieve', compact('announcements', 'totalArchieve'));
     }
 
     public function upcoming()
     {
         $todayDate = date('Y-m-d');
+        $totalUpcoming =  Announcement::where('start_date', '>', $todayDate)->count();
         $announcements =  Announcement::where('start_date', '>', $todayDate)->latest()->get();
-        return view('admin.announcement.upcoming', compact('announcements'));
+        return view('admin.announcement.upcoming', compact('announcements', 'totalUpcoming'));
     }
 }

@@ -30,11 +30,11 @@
         <div class="row">
           <div class="col-12">
            <div class="box">
-              <div class="box-header with-border">
+              <div class="box-header bg-info with-border">
                 <h3 class="box-title">CHURCH MINISTRIES 
-                    <span class="badge badge-info badge-sm">{{ $noOfMinistry }}</span>
+                    <sup><span class="badge badge-danger badge-sm">{{ $noOfMinistry }}</span></sup>
                 </h3>
-                <a href="{{ route('admin.ministry.create') }}" class="btn btn-info float-right text-uppercase">
+                <a href="{{ route('admin.ministry.create') }}" class="btn btn-danger float-right text-uppercase">
                     <i class="fa fa-plus"></i>  new ministry
                 </a>
               </div>

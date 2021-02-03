@@ -28,14 +28,14 @@
         <div class="row">
           <div class="col-12">
             <div class="box">
-              <div class="box-header with-border">
+              <div class="box-header bg-info with-border">
                 <h3 class="box-title text-uppercase">Active Church Families</h3>
                 <div class="btn-group float-right">
-                    <a href="{{ route('admin.family.familygrid') }}" class="waves-effect waves-light btn btn-info">
+                    <a href="{{ route('admin.family.familygrid') }}" class="waves-effect waves-light btn btn-danger">
                         <i class="fa fa-list"></i> Grid View
                     </a>
                     {{-- <button type="button" class="waves-effect waves-light btn btn-info">Middle</button> --}}
-                    <a href="{{ route('admin.family.create') }}" class="waves-effect waves-light btn btn-info">
+                    <a href="{{ route('admin.family.create') }}" class="waves-effect waves-light btn btn-danger">
                         <i class="fa fa-plus"></i> New Family
                     </a>
                   </div>
@@ -73,7 +73,13 @@
                                     <span class="badge badge-info">{{ $family->email }}</span>
                                   @endif
                                 </td>
-                                <td>{{ $family->wedding_date }}</td>
+                                <td>
+                                  @if ($family->wedding_date == '')
+                                    <span class="badge badge-pill badge-danger">Coming Soon</span>
+                                  @else
+                                      {{ $family->wedding_date }}
+                                  @endif
+                                </td>
                                 <td>
                                   <a href="{{ route('admin.family.show', $family->id) }}" class="btn btn-info px-5">
                                     <i class="fa fa-eye"></i>

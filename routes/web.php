@@ -49,6 +49,7 @@ Route::get('allcollection/collection','CollectionController@allcollection')->nam
 Route::get('thismonth/collection', 'CollectionController@thismonth')->name('collection.thismonth');
 Route::get('annually/collection', 'CollectionController@annually')->name('collection.annually');
 Route::get('quartely/collection', 'CollectionController@quartely')->name('collection.quartely');
+Route::resource('family-member', 'MemberFamilyController');
 
 });
 Route::group(['as'=>'members.','prefix'=>'members', 'namespace'=>'Members','middleware'=>['auth','members']], function(){

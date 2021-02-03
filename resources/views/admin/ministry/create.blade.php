@@ -56,10 +56,10 @@
                         </div>
                         <!-- /.box-body -->
                         <div class="box-footer">
-                            <a href="{{ route('admin.ministry.index') }}" class="btn btn-rounded btn-warning btn-outline mr-1">
+                            <a href="{{ route('admin.ministry.index') }}" class="btn btn-rounded btn-danger btn-outline mr-1">
                               <i class="ti-trash"></i> Cancel
                             </a>
-                            <button type="submit" class="btn btn-rounded btn-primary btn-outline">
+                            <button type="submit" class="btn btn-rounded btn-info btn-outline">
                               <i class="ti-save-alt"></i> Save
                             </button>
                         </div>  

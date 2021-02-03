@@ -32,13 +32,13 @@
         <div class="row">
            <div class="col-12">
            <div class="box">
-              <div class="box-header with-border">
+              <div class="box-header bg-info with-border">
                 <h3 class="box-title">CHURCH DISTRICTS
                   </h3>
                   {{-- <button type="button" class="btn btn-primary text-uppercase float-right" data-toggle="modal" data-target="#districtModal">
 					<i class="fa fa-plus"></i> New District
                   </button> --}}
-                <a href="{{ route('admin.district.create') }}" class="btn btn-info float-right text-uppercase">
+                <a href="{{ route('admin.district.create') }}" class="btn btn-danger float-right text-uppercase">
                     <i class="fa fa-plus"></i> New District
                 </a>
               </div>
@@ -75,9 +75,9 @@
                                             <i class="fa fa-edit"></i> 
                                         </a>
                                         
-                                        <a href="{{ route('admin.district.show', $district->id) }}" class="btn btn-primary px-5">
+                                        {{-- <a href="{{ route('admin.district.show', $district->id) }}" class="btn btn-primary px-5">
                                             <i class="fa fa-eye"></i>
-                                        </a>
+                                        </a> --}}
                                   </td>
                               </tr>
                           @endforeach
