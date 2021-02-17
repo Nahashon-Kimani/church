@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
 use App\Event;
 use App\User;
+use App\Member;
 
 class EventController extends Controller
 {
@@ -17,8 +18,13 @@ class EventController extends Controller
      */
     public function index()
     {
+        $today = date('Y-m-d');
         $events = Event::latest()->get();
-        return view('admin.event.index', compact('events'));
+        $totalEvents = Event::count();
+        $todayEvents = Event::where('date', '=', date('Y-m-d'))->count();
+        $noOfUpcoming  = Event::where('date', '>', $today)->count();
+        $noOfArchieve  = Event::where('date', '<', $today)->count();
+        return view('admin.event.index', compact('events', 'totalEvents', 'todayEvents', 'noOfArchieve', 'noOfUpcoming'));
     }
 
     /**
@@ -28,7 +34,7 @@ class EventController extends Controller
      */
     public function create()
     {
-        $users = User::latest()->get();
+        $users = Member::latest()->get();
         return view('admin.event.create', compact('users'));
     }
 
@@ -126,16 +132,29 @@ class EventController extends Controller
     public function archieve()
     {
         $today = date('Y-m-d');
+        $totalEvents = Event::count();
         $events  = Event::where('date', '<', $today)->latest()->get();
+        $todayEvents = Event::where('date', '=', date('Y-m-d'))->count();
+        $noOfUpcoming  = Event::where('date', '>', $today)->count();
         $noOfArchieve  = Event::where('date', '<', $today)->count();
-        return view('admin.event.archieve', compact('events', 'noOfArchieve'));
+        return view('admin.event.archieve', compact('events', 'totalEvents', 'todayEvents', 'noOfArchieve', 'noOfUpcoming'));
     }
 
     public function upcoming()
     {
         $today = date('Y-m-d');
         $events  = Event::where('date', '>', $today)->latest()->get();
-        $noOfArchieve  = Event::where('date', '>', $today)->count();
-        return view('admin.event.upcoming', compact('events', 'noOfArchieve'));
+        $noOfUpcoming  = Event::where('date', '>', $today)->count();
+        $totalEvents = Event::count();
+        $todayEvents = Event::where('date', '=', date('Y-m-d'))->count();
+        $noOfArchieve  = Event::where('date', '<', $today)->count();
+        return view('admin.event.upcoming', compact('events', 'totalEvents', 'todayEvents', 'noOfArchieve', 'noOfUpcoming'));
+    }
+
+    public function todays()
+    {
+        $events = Event::where('date', '=', date('Y-m-d'))->latest()->get();
+        $todayEvents = Event::where('date', '=', date('Y-m-d'))->count();
+        return view('admin.event.index', compact('events', 'totalEvents', 'todayEvents', 'noOfArchieve', 'noOfUpcoming'));
     }
 }

@@ -11,7 +11,7 @@
               <div class="mr-auto">
                   <h3 class="page-title">CHURCH DISTRICTS 
                     {{-- <span class="badge badge-danger badge-sm">{{ $noOfDistricts }}</span> --}}
-                    <span class="badge badge-pill badge-warning badge-sm">{{ $noOfDistricts }}</span>
+                    {{-- <span class="badge badge-pill badge-warning badge-sm">{{ $noOfDistricts }}</span> --}}
                   </h3>
                   <div class="d-inline-block align-items-center">
                       <nav>
@@ -33,7 +33,7 @@
            <div class="col-12">
            <div class="box">
               <div class="box-header bg-info with-border">
-                <h3 class="box-title">CHURCH DISTRICTS
+                <h3 class="box-title">CHURCH DISTRICTS: {{ $noOfDistricts }}
                   </h3>
                   {{-- <button type="button" class="btn btn-primary text-uppercase float-right" data-toggle="modal" data-target="#districtModal">
 					<i class="fa fa-plus"></i> New District
@@ -60,10 +60,10 @@
                           @foreach ($districts as $key=>$district)
                               <tr>
                                   <td>{{ $key + 1 }}</td>
-                                  <td>{{ $district->name }}</td>
+                                  <td>{{ Str::ucfirst($district->name) }}</td>
                                    <td> 
                                        @if ($district->deacon_in_charge == null)
-                                         --
+                                            <span class="badge badge-danger float-center">Not Assigned</span>
                                         @else
                                             {{ $district->deconInCharge->fullname }}
                                         @endif
@@ -71,13 +71,14 @@
                                   <td>{{ $district->user->name }}</td>
                                   <td>{{ date('dS -F - Y', strtotime($district->created_at)) }}</td>{{-- H:i:s a --}}
                                   <td>
-                                        <a href="{{ route('admin.district.edit', $district->id) }}" class="btn btn-info px-5">
-                                            <i class="fa fa-edit"></i> 
-                                        </a>
-                                        
-                                        {{-- <a href="{{ route('admin.district.show', $district->id) }}" class="btn btn-primary px-5">
-                                            <i class="fa fa-eye"></i>
-                                        </a> --}}
+                                        <div class="btn-group mb-5">
+                                            <button type="button" class="waves-effect waves-light btn btn-info dropdown-toggle" data-toggle="dropdown">ACTIONS</button>
+                                            <div class="dropdown-menu">
+                                              <a class="dropdown-item" href="{{ route('admin.district.edit', $district->id) }}">Edit</a>
+                                              <div class="dropdown-divider"></div>
+                                              <a class="dropdown-item" href="{{ route('admin.district.show', $district->id) }}">View</a>
+                                            </div>
+                                          </div>
                                   </td>
                               </tr>
                           @endforeach

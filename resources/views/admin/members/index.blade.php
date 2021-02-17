@@ -53,7 +53,7 @@
 							@foreach($members as $key=>$member)
 							<tr>
 								<td>{{ $key + 1 }}</td>
-								<td>{{ $member->fullname }}</td>
+								<td>{{ Str::ucfirst($member->fullname) }}</td>
 								<td>{{ $member->phonenumber }}</td>
 								<td>{{ $member->email }}</td>
 								<td>{{ $member->address }}</td>

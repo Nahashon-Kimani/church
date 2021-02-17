@@ -37,8 +37,9 @@
                      <h1 class="h1 text-white text-center text-lg display-1 text-uppercase">
                         <strong>
                             @php
-                                $initial = $family->member->fullname;
-                                echo $initial[0];
+                                $fName = $family->member->firstname;
+                                $lName = $family->member->lastname;
+                                echo $fName[0] ." ". $lName[0];
                             @endphp
                         </strong>
                      </h1>
@@ -126,9 +127,19 @@
               <div class="col-12">
                 <div class="box bt-5 border-danger border-top">
                     <div class="box-header rounded p-15 h-70 bg-danger bg-bubbles-dark with-border">
-                      <h3 class="box-title text-uppercase text-white">{{ $family->member->fullname }} Family Members</h3>
-                      <button type="button" class="btn bg-primary-light px-5 text-uppercase float-right" data-toggle="modal" data-target="#myModal">
-                        <i class="fa fa-plus"></i> New Member</button>
+                      <div class="row">
+                          <div class="col-4">
+                            <h3 class="box-title text-uppercase text-white">{{ $family->member->fullname }} Family Members</h3>
+                          </div>
+                          <div class="col-4">
+                            <h3 class="box-title text-uppercase text-white text-center">Members: {{ $memberNo }}</h3>
+                          </div>
+                          <div class="col-4">
+                            <button type="button" class="btn bg-primary-light px-5 text-uppercase float-right" data-toggle="modal" data-target="#myModal">
+                              <i class="fa fa-plus"></i> New Member
+                            </button>
+                          </div>
+                      </div>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">

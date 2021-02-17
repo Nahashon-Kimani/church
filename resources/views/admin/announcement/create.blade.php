@@ -1,5 +1,5 @@
 @extends('layouts.admin.app')
-
+@section('title', 'NEW ANNOUNCEMENTS')
 @section('content')
 
 <div class="content-wrapper">

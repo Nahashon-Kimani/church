@@ -78,7 +78,7 @@
 				  <div class="box-body">
 					<div class="media-list media-list-hover media-list-divided">
                         @foreach ($districts as $key=>$district)
-                            <a class="media media-single" href="#">
+                            <a class="media media-single" href="{{ route('admin.district.show', $district->id) }}">
                                 {{-- <i class="font-size-18 mr-0 flag-icon flag-icon-us"></i> --}}
                                 <span class="badge badge-pill badge-warning-light">{{ $key + 1 }}</span>
 						            <span class="title">{{ $district->name }} </span>

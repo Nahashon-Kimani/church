@@ -100,7 +100,8 @@ class FamilyController extends Controller
         $families = Family::latest()->limit(3)->get();
         $members = Member::latest()->get();
         $familyMembers = MemberFamily::where('family_id', '=', $id)->latest()->get();
-        return view('admin.family.show', compact('family', 'families', 'members', 'familyMembers'));
+        $memberNo = MemberFamily::where('family_id', '=', $id)->count();
+        return view('admin.family.show', compact('family', 'families', 'members', 'familyMembers', 'memberNo'));
     }
 
     /**

@@ -68,10 +68,10 @@
 				  </div>
 				  <div class="box-body">
                     <div class="media-list media-list-hover media-list-divided">
-						<a class="media media-single" href="#">
+						<a class="media media-single" href="{{ route('admin.members.show', $theme->created_by) }}" target="_blank">
                             <span class="badge badge-pill badge-danger-light">1</span>
 						        <span class="title">{{ $theme->user->name }} </span>
-						    <span class="badge badge-pill badge-danger-light">125</span>
+						    {{-- <span class="badge badge-pill badge-danger-light">125</span> --}}
 						</a>
 					  </div>
 				  </div>
@@ -95,7 +95,7 @@
                           </div>
                     </div>
                     <div class="box-footer">
-                      <p>A footer for more content inside</p>
+                      <p class="lead text-uppercase">content inside</p>
                     </div>
                   </div>
 			  </div>

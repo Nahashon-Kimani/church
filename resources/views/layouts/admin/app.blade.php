@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="https://www.multipurposethemes.com/admin/eduadmin-template/images/favicon.ico">
 
-    <title>EduAdmin - Dashboard</title>
+    <title>PCEA KAYOLE || @yield('title')</title>
     
 	<!-- Vendors Style-->
 	<link rel="stylesheet" href="{{ asset('../eduadmin/assets/css/vendors_css.css ') }}">

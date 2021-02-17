@@ -29,7 +29,7 @@
           <div class="col-12">
             <div class="box">
               <div class="box-header bg-info with-border">
-                <h3 class="box-title text-uppercase">Today ({{ date('dS-F-Y') }}) church attendance</h3>
+                <h3 class="box-title text-uppercase">All church Attendance</h3>
                     <button type="button" class="btn btn-danger float-right" data-toggle="modal" data-target="#myModal">
 					            <i class="fa fa-plus"></i> NEW ATTENDANCE
 				            </button>

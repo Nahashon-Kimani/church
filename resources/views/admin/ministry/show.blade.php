@@ -39,7 +39,7 @@
 				  <div class="box-header bg-info with-border text-center">
                     <h3 class="box-title text-white text-uppercase text-center m-5"><strong>{{ $ministry->id }}. {{ $ministry->name }} department</strong></h3>
                     <br> <br>
-                    <p class="h5 text-uppercase">Current Leader: 
+                    <p class="h5 text-uppercase lead">Current Leader: 
                         @if ($ministry->current_leader == NULL)
                             <span class="badge badge-danger text-uppercase">not assigned</span>
                         @else
@@ -405,7 +405,7 @@
                         @foreach ($minitries as $key=>$ministry)
                             <a class="media media-single" href="{{ route('admin.ministry.show', $ministry->id) }}">
                                 <span class="badge badge-pill badge-danger-light">{{ $key + 1 }}</span>
-                                <span class="title">{{ $ministry->name }} </span>
+                                <span class="title text-capitalize">{{ $ministry->name }} department</span>
                             </a>
                         @endforeach
 					  </div>

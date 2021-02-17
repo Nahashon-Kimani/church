@@ -28,10 +28,10 @@
         <div class="row">
           <div class="col-12">
             <div class="box">
-              <div class="box-header with-border">
+              <div class="box-header bg-info with-border">
                 <h3 class="box-title text-uppercase">Giving Category</h3>
-                <button type="button" class="btn btn-primary text-uppercase float-right" data-toggle="modal" data-target="#myModal">
-					<i class="fa fa-plus"></i> new Giving Category
+                <button type="button" class="btn btn-danger text-uppercase float-right" data-toggle="modal" data-target="#myModal">
+					<i class="fa fa-plus"></i>  new Giving Category
 				  </button>
               </div>
               <!-- /.box-header -->
@@ -51,11 +51,11 @@
                                 @foreach ($categories as $key=>$category)
                                     <tr>
                                         <td>{{ $key + 1 }}</td>
-                                        <td>{{ $category->name }}</td>
+                                        <td>{{ Str::ucfirst($category->name) }}</td>
                                         <td>{{ $category->user->name }}</td>
                                         <td>{{ date('dS - F - Y', strtotime($category->created_at)) }}</td>
                                         <td>
-                                            <a href="{{ route('admin.givingcategory.edit', $category->id) }}" class="btn btn-info px-5">
+                                            <a href="{{ route('admin.givingcategory.show', $category->id) }}" class="btn btn-info px-5">
                                                 <i class="fa fa-eye"></i>
                                             </a>
                                         </td>

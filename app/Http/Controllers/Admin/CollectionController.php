@@ -27,7 +27,10 @@ class CollectionController extends Controller
     // All Collections
     public function allcollection()
     {
-        $collections = Collection::latest()->get();
+        $collections = Collection::orderBy('date', 'desc')
+                        ->orderBy('amount', 'asc')
+                        ->orderBy('giving_category_id', 'asc')
+                        ->get();
         $totalCollections = Collection::sum('amount');
         return view('admin.collection.index', compact('collections', 'totalCollections'));
     }

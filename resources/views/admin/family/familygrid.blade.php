@@ -28,14 +28,14 @@
         <div class="row">
           <div class="col-12">
             <div class="box">
-              <div class="box-header with-border">
+              <div class="box-header bg-info with-border">
                 <h3 class="box-title text-uppercase">Church Families</h3>
                 <div class="btn-group float-right">
-                    <a href="{{ route('admin.family.index') }}" class="waves-effect waves-light btn btn-info">
+                    <a href="{{ route('admin.family.index') }}" class="waves-effect waves-light btn btn-danger">
                         <i class="fa fa-list"></i> List View
                     </a>
                     {{-- <button type="button" class="waves-effect waves-light btn btn-info">Middle</button> --}}
-                    <a href="{{ route('admin.family.create') }}" class="waves-effect waves-light btn btn-info">
+                    <a href="{{ route('admin.family.create') }}" class="waves-effect waves-light btn btn-danger">
                         <i class="fa fa-plus"></i> New Family
                     </a>
                   </div>
@@ -63,7 +63,7 @@
                                               <span class="badge badge-pill badge-secondary-light">Family Head</span>
                                             </a>
                     
-                                            <a class="media media-single" href="#">
+                                            <a class="media media-single" href="tel:+{{ $family->telephone }}">
                                               {{-- <i class="font-size-18 mr-0 flag-icon flag-icon-ba"></i> --}}
                                               <span class="title">{{ $family->telephone }}</span>
                                               <span class="badge badge-pill badge-info-light">Home</span>
@@ -72,13 +72,13 @@
                                             <a class="media media-single" href="tel:+{{ $family->emergency_no }}">
                                               {{-- <i class="font-size-18 mr-0 flag-icon flag-icon-ch"></i> --}}
                                               <span class="title">{{ $family->emergency_no }}</span>
-                                              <span class="badge badge-pill badge-danger-light">Emergency</span>
+                                              <span class="badge badge-pill badge-danger-light">Emergency no</span>
                                             </a>
                     
                                             <a class="media media-single" href="#">
                                               {{-- <i class="font-size-18 mr-0 flag-icon flag-icon-de"></i> --}}
                                               <address><span class="title">{{ $family->address }}</span></address>
-                                              <span class="badge badge-pill badge-success-light texxt-right">Address</span>
+                                              <span class="badge badge-pill badge-success-light float-right">Address</span>
                                             </a>
 
                                             {{-- Email Validation --}}
@@ -89,7 +89,7 @@
                                                     <span class="badge badge-pill badge-danger-light">Email</span>
                                                 </a>
                                             @else
-                                                <a class="media media-single" href="#">
+                                                <a class="media media-single" href="mailto:{{ $family->email }}">
                                                     {{-- <i class="font-size-18 mr-0 flag-icon flag-icon-fr"></i> --}}
                                                     <span class="title">{{ $family->email }}</span>
                                                     <span class="badge badge-pill badge-danger-light">Email</span>
@@ -98,22 +98,18 @@
 
                                             {{-- Wedding date Validation --}}
                                             @if ($family->wedding_date == '')
-                                                <span class="badge badge-pill badge-warning-light">Coming Soon</span>
+                                                <a class="media media-single" href="#">
+                                                    {{-- <i class="font-size-18 mr-0 flag-icon flag-icon-fr"></i> --}}
+                                                    <span class="title">Wedding: Coming Soon</span>
+                                                    <span class="badge badge-pill badge-danger-light">Email</span>
+                                                </a>
                                             @else
                                                 <a class="media media-single" href="#">
                                                     {{-- <i class="font-size-18 mr-0 flag-icon flag-icon-ga"></i> --}}
-                                                        <span class="title">{{ date('dS-F-Y', strtotime($family->wedding_date)) }}</span>
-                                                    <span class="badge badge-pill badge-warning-light">452</span>
+                                                        Wedding: <span class="title">{{ date('dS-F-Y', strtotime($family->wedding_date)) }}</span>
+                                                    <span class="badge badge-pill badge-warning-light">Wedding Date</span>
                                                 </a>
                                             @endif
-                    
-                                            
-                    
-                                            <a class="media media-single" href="#">
-                                              <i class="font-size-18 mr-0 flag-icon flag-icon-us"></i>
-                                              <span class="title">USA</span>
-                                              <span class="badge badge-pill badge-secondary-light">125</span>
-                                            </a>
                     
                                           </div>
                                        </div>

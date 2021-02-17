@@ -18,7 +18,8 @@
 					</a>
 					<ul class="treeview-menu">
 						<li><a href="{{ route('admin.dashboard') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>HOME</a></li>
-						<li><a href="{{ route('admin.members.index') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>MEMBERS</a></li>
+						<li><a href="{{ route('admin.members.create') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>ADD NEW MEMBERS</a></li>
+						<li><a href="{{ route('admin.members.index') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>ALL MEMBERS</a></li>
 					</ul>
 				  </li>
 				<li class="treeview">
@@ -75,7 +76,8 @@
 					</span>
 				  </a>
 				  	<ul class="treeview-menu">
-						<li><a href="{{ route('admin.event.index') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>ALL</a></li>
+						<li><a href="{{ route('admin.event.create') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>ADD NEW EVENT</a></li>
+						<li><a href="{{ route('admin.event.index') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>ALL EVENTS</a></li>
 						<li><a href="{{ route('admin.event.upcoming') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>UP COMMING</a></li>
 						<li><a href="{{ route('admin.event.archieve') }}"><i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>ARCHIVE</a></li>
 					</ul>

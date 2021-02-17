@@ -18,8 +18,11 @@ class AttendanceController extends Controller
     public function index()
     {
         $members = Member::all();
-        $services = Service::latest()->get();
-        $attendances = Attendance::where('date', '=', date('Y-m-d'))->get();
+        $services = Service::all();
+        $attendances = Attendance::where('date', '=', date('Y-m-d'))
+                        ->orderBy('service_id', 'asc')
+                        ->orderBy('seat_no', 'asc')
+                        ->get();
         return view('admin.attendance.index', compact('members', 'services', 'attendances'));
     }
 

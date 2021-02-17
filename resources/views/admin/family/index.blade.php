@@ -63,7 +63,9 @@
                               <tr>
                                 <td>{{ $key + 1 }}</td>
                                 <td>{{ $family->member->fullname }} Family</td>
-                                <td>{{ $family->member->fullname }}</td>
+                                <td>
+                                  <a href="{{ route('admin.members.show', $family->family_head) }}">{{ $family->member->fullname }}</a>
+                                </td>
                                 <td>{{ $family->telephone }}</td>
                                 <td>{{ $family->emergency_no }}</td>
                                 <td>{{ $family->address }}</td>

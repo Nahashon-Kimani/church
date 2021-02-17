@@ -1,5 +1,5 @@
 @extends('layouts.admin.app')
-@section('title','COLLECTIONS')
+
 @section('content')
 
 <div class="content-wrapper" style="min-height: 921px;">
@@ -28,13 +28,8 @@
         <div class="row">
           <div class="col-12">
             <div class="box">
-              <div class="box-header with-border bg-info">
-                <h3 class="box-title text-uppercase">Church Collections</h3>
-                  <br><br>
-                  <h4 class="box-title text-uppercase text-white mt-5">Total Collections Ksh. {{ number_format($totalCollections, 2, '.', ',') }}</h4>
-                <a href="{{ route('admin.collection.create') }}" class="btn btn-danger px-5 float-right">
-                    <i class="fa fa-plus"></i> New Collection
-                </a>
+              <div class="box-header bg-info with-border">
+                <h3 class="box-title text-uppercase">{{ $category->name }}</h3>
               </div>
               <!-- /.box-header -->
               <div class="box-body">
@@ -43,37 +38,29 @@
                       <thead>
                           <tr>
                             <th>ID</th>
-                            <th>SERVICE</th>
                             <th>DATE</th>
-                            <th>AMOUNT</th>
-                            <th>GIVING CATEGORY</th>
+                            {{-- <th>SERVICE NAME</th> --}}
+                            <th>AMOUNT GIVEN</th>
                             <th>CREATED BY</th>
                           </tr>
                       </thead>
-                        <tbody>
-                            @foreach ($collections as $key=>$collection)
-                                <tr>
-                                    <td>{{ $key + 1 }}</td>
-                                    <td>{{ $collection->service->name }}</td>
-                                    <td>{{ date('dS - F - Y', strtotime($collection->date)) }}</td>
-                                    <td>Ksh. {{ number_format($collection->amount, 2, '.', ',') }}</td>
-                                    <td>
-                                      {{ $collection->category->name }}
-                                        @if ($collection->date == date('Y-m-d'))
-                                          <span class="badge badge-info"> Today</span>
-                                        @endif
-                                    </td>
-                                    <td>{{ $collection->user->name }}</td>
-                                </tr>
-                            @endforeach
-                        </tbody>				  
+                       		<tbody>
+                                @foreach ($collections as $key=>$collection)
+                                    <tr>
+                                        <td>{{ $key + 1 }}</td>
+                                        <td>{{ date('dS - F - Y', strtotime($collection->date)) }}</td>
+                                        {{-- <td>{{ $collection->serviceName->name }}</td> --}}
+                                        <td>{{ $collection->amount }}</td>
+                                        <td>{{ $collection->user->name }}</td>
+                                    </tr>
+                                @endforeach
+                            </tbody>	  
                       <tfoot>
                           <tr>
                             <th>ID</th>
-                            <th>SERVICE</th>
                             <th>DATE</th>
+                            {{-- <th>SERVICE NAME</th> --}}
                             <th>AMOUNT</th>
-                            <th>GIVING CATEGORY</th>
                             <th>CREATED BY</th>
                           </tr>
                       </tfoot>

@@ -1,5 +1,5 @@
 @extends('layouts.admin.app')
-
+@section('title','COLLECTION CREATE')
 @section('content')
 
 <div class="content-wrapper" style="min-height: 921px;">
@@ -83,7 +83,7 @@
                             </div>  
    
                             <div class="box-footer">
-                              <button type="button" class="btn btn-rounded btn-warning btn-outline mr-1">
+                              <button type="button" class="btn btn-rounded btn-danger btn-outline mr-1">
                                 <i class="ti-trash"></i> Cancel
                               </button>
                               <button type="submit" class="btn btn-rounded btn-primary btn-outline">

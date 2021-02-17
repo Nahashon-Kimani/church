@@ -1,5 +1,5 @@
 @extends('layouts.admin.app')
-
+@section('title','HOME')
 @section('content')
 
 <div class="content-wrapper" style="min-height: 760px;">
@@ -79,49 +79,41 @@
             <div class="row">
                 {{-- Today Attendance --}}
                 <div class="col-sm-5 col-12">
-                    <h4 class="title text-uppercase">Services List</h4>	
-                    <div class="row">						
-                        @foreach ($services as $service)
-                            <div class="col-sm-6">
-                                <div>
-                                    <div class="box bt-5 border-danger rounded pull-up">
-                                        <div class="box-body">	
-                                            <div class="flex-grow-1">	
-                                                <div class="d-flex align-items-center pr-2 justify-content-between">							
-                                                    
-                                                    <h4 class="font-weight-500">
-                                                        {{ $service->name }} 
-                                                    </h4>						
-                                                </div>
-                                                <p class="h6 text-capitalize">
-                                                     Today {{ date('d-m-Y')}} 
-                                                    {{--from {{ date('h:i A', strtotime($service->start_time)) }} 
-                                                    to {{ date('h:i A', strtotime($service->ending_time)) }} --}}
-                                                </p>
-                                            </div>							
-                                            <div class="d-flex align-items-center justify-content-between mt-10">
-                                                <div class="d-flex">
-                                                    <a href="#" class="mr-15 bg-lightest h-50 w-50 l-h-50 rounded-circle text-center overflow-hidden">
-                                                        <img src="{{ asset('../eduadmin/assets/images/avatar/avatar-1.png') }}" class="h-50 align-self-end" alt="">
-                                                    </a>
-                                                    <a href="#" class="mr-15 bg-lightest h-50 w-50 l-h-50 rounded-circle text-center overflow-hidden">
-                                                        <img src="{{ asset('../eduadmin/assets/images/avatar/avatar-3.png') }}" class="h-50 align-self-end" alt="">
-                                                    </a>
-                                                    <a href="#" class="mr-15 bg-lightest h-50 w-50 l-h-50 rounded-circle text-center overflow-hidden">
-                                                        <img src="{{ asset('../eduadmin/assets/images/avatar/avatar-4.png') }}" class="h-50 align-self-end" alt="">
-                                                    </a>
-                                                </div>
-                                                <button type="button" class="waves-effect waves-circle btn btn-circle btn-dark text-uppercase">
-                                                    <i class="fa fa-eye"></i>
-                                                </button>
-                                            </div>
-                                        </div>					
-                                    </div>
+                    {{-- <h4 class="title text-uppercase">Services List</h4>	 --}}
+                            <div class="box">		
+                                <div class="box-header bg-danger">
+                                    <h4 class="box-title text-white text-uppercase">Church services</h4>
                                 </div>
+                                <div class="box-body px-0 bg-danger rounded-0">	
+                                    <div id="spark1" class="text-dark"></div>
+                                </div>
+                                <div class="box-body up-mar60 pb-0">	
+                                    <div class="row">
+                                        @foreach ($services as $service)
+                                            @if (($service->id)%2 == 0)
+                                                <div class="col-6">
+                                                    <div class="bg-danger-light px-30 py-40 rounded20 mb-20">
+                                                        <span class="icon-Equalizer d-block font-size-40"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></span>
+                                                        <a href="#" class="text-danger font-weight-500 font-size-18 text-capitalize">
+                                                            {{ $service->name }} 
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            @else
+                                                <div class="col-6">
+                                                    <div class="bg-success-light px-30 py-40 rounded20 mb-20">
+                                                        <span class="icon-Equalizer d-block font-size-40"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></span>
+                                                        <a href="#" class="text-success font-weight-500 font-size-18 text-capitalize">
+                                                            {{ $service->name }} 
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            @endif
+                                        @endforeach
+                                    </div>
+                                </div>					
                             </div>
-                         @endforeach
                     </div>
-                </div>
                 {{-- church services --}}
                 <div class="col-sm-7 col-12">
 					<div class="box">
@@ -135,10 +127,17 @@
                               @foreach ($services as $service)
                                 <a class="media media-single" href="{{ route('admin.attendance.index') }}">
                                     <h4 class="w-50 text-gray font-weight-500">{{ date('h:i A', strtotime($service->start_time)) }}</h4>
-                                    <div class="media-body pl-15 bl-5 rounded border-primary">
-                                    <p>{{ $service->name }}</p>
-                                    <span class="text-fade">{{ date('h:i A', strtotime($service->ending_time)) }} (END) </span>
-                                    </div>
+                                    @if (($service->id)%2 == 0)
+                                        <div class="media-body pl-15 bl-5 rounded border-danger">
+                                            <p>{{ $service->name }}</p>
+                                            <span class="text-fade">{{ date('h:i A', strtotime($service->ending_time)) }} (END) </span>
+                                        </div>
+                                    @else
+                                        <div class="media-body pl-15 bl-5 rounded border-primary">
+                                            <p>{{ $service->name }}</p>
+                                            <span class="text-fade">{{ date('h:i A', strtotime($service->ending_time)) }} (END) </span>
+                                        </div>
+                                    @endif
                                     <hr>
                                 </a>
                               @endforeach

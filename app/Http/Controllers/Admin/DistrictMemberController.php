@@ -5,10 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
-use App\GivingCategory;
-use App\Collection;
+use App\DistrictMember;
 
-class GivingCategoryController extends Controller
+class DistrictMemberController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +16,7 @@ class GivingCategoryController extends Controller
      */
     public function index()
     {
-        $categories = GivingCategory::latest()->get();
-        return view('admin.givingcategory.index', compact('categories'));
+        //
     }
 
     /**
@@ -40,17 +38,16 @@ class GivingCategoryController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name'=>'required'
+            'member_id'=>'required'
         ]);
+            $member = new DistrictMember();
+            $member->member_id = $request->member_id;
+            $member->district_id = $request->district_id;
+            $member->created_by = $request->user_id;
+            $member->save();
 
-        $category = new GivingCategory();
-        $category->name = $request->name;
-        $category->slug = $request->name;
-        $category->created_by = $request->created_by;
-        $category->save();
-
-        Toastr::success('Giving Category Successfully Saved' ,'Success');
-        return redirect()->back();
+            Toastr::success('Member Successfully Added' ,'Success');
+            return redirect()->back();
     }
 
     /**
@@ -61,11 +58,7 @@ class GivingCategoryController extends Controller
      */
     public function show($id)
     {
-        $collections = Collection::where('giving_category_id', '=', $id)
-                        ->orderBy('date', 'desc')
-                        ->get();
-        $category = GivingCategory::findOrFail($id);
-        return view('admin.givingcategory.show', compact('collections', 'category'));
+        //
     }
 
     /**

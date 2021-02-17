@@ -48,12 +48,13 @@
                             <div class="form-group">
                                 <label>Current Leader</label>
                                 <select name="leader" class="form-control selects input-lg">
-                                  @if ($ministry->current_leader == NULL)
+                                  {{-- @if ($ministry->current_leader == NULL)
                                     <option selected disabled>-- Select --</option>
                                   @else
-                                    <option selected value="{{ $ministry->current_leader }}">{{ $ministry->user->name }}</option>  
-                                  @endif
-                                  {{-- other options --}}
+                                    <option selected value="{{ $ministry->current_leader }}">{{ $ministry->deconInCharge->fullname }}</option>  
+                                  @endif 
+                                  
+                                  other options --}}
                                   <option disabled>________________________</option>
                                     @foreach ($members as $member)
                                         <option value="{{ $member->id }}">{{ $member->fullname }}</option>

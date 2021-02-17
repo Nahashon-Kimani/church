@@ -26,7 +26,7 @@
       <!-- Main content -->
       <section class="content">
         <div class="row">
-          <div class="col-12">
+          <div class="col-10">
             <div class="box">
               <div class="box-header bg-info with-border">
                 <h3 class="box-title text-uppercase">Today ({{ date('dS-F-Y') }}) church attendance</h3>
@@ -46,7 +46,7 @@
                             <th>TEMPARATURE</th>
                             <th>SEAT</th>
                             <th>TIME ARRIVE</th>
-                            <th>DATE</th>
+                            {{-- <th>DATE</th> --}}
                             <th>SERVED BY</th>
                           </tr>
                       </thead>
@@ -59,7 +59,7 @@
                                   <td>{{ $attendance->temp }}</td>
                                   <td>{{ $attendance->seat_no }}</td>
                                   <td>{{ date('h:i A', strtotime($attendance->time)) }}</td>
-                                  <td>{{ date('dS-F-Y', strtotime($attendance->date)) }}</td>
+                                  {{-- <td>{{ date('dS-F-Y', strtotime($attendance->date)) }}</td> --}}
                                   <td>{{ $attendance->user->name }}</td>
                                 </tr>
                             @endforeach
@@ -72,7 +72,7 @@
                             <th>TEMPARATURE</th>
                             <th>SEAT</th>
                             <th>TIME ARRIVE</th>
-                            <th>DATE</th>
+                            {{-- <th>DATE</th> --}}
                             <th>SERVED BY</th>
                           </tr>
                       </tfoot>
@@ -82,6 +82,28 @@
               <!-- /.box-body -->
             </div>
             <!-- /.box -->          
+          </div>
+
+          {{-- second Column --}}
+          <div class="col-2">
+            <div class="box">
+              <div class="box-header bg-info with-border">
+              <h4 class="box-title text-uppercase">Services<strong> Attendance</strong></h4>
+              </div>
+              <div class="box-body p-0">
+                <div class="media-list media-list-hover media-list-divided">
+                  @foreach ($services as $key=>$service)
+                      <a class="media media-single">
+                        <span class="badge badge-pill badge-danger-light">{{ $key + 1 }}</span>
+                          <span class="title">{{ $service->name }} </span>
+                      </a>
+                  @endforeach
+                </div>
+               </div>
+              <div class="box-footer">
+              <p class="text-capitalize text-danger"></p>
+              </div>
+            </div>
           </div>
           <!-- /.col -->
         </div>
@@ -105,19 +127,24 @@
                 <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                 <input type="hidden" name="time" value="{{ date_create('now')->format('Y-m-d H:i:s') }}">
                 <div class="modal-body">
-                    <div class="form-group">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="form-group">
                         <label>MEMBER NAME</label>
-                        <select name="member_id" class="form-control mySelect2">
+                        <select name="member_id" class="form-control selects">
                                 @foreach ($members as $member)
                                     <option value="{{ $member->id }}">{{ $member->fullname }}</option>
                                 @endforeach
                             </select>
                       </div>
+                  </div>
+                </div>
+                   
                       <div class="row">
                         <div class="col-sm-6">
                           <div class="form-group">
                             <label>SERVICE</label>
-                            <select name="service_id" class="form-control mySelect2">
+                            <select name="service_id" class="form-control selects">
                                 @foreach ($services as $service)
                                     <option value="{{ $service->id }}">{{ $service->name }}</option>
                                 @endforeach

@@ -7,7 +7,7 @@
       <!-- Content Header (Page header) -->
       <div class="content-header">
         <div class="btn-group float-right mb-5">
-            <button type="button" class="waves-effect waves-light btn btn-info dropdown-toggle" data-toggle="dropdown">ACTION</button>
+            <button type="button" class="waves-effect waves-light btn btn-danger dropdown-toggle" data-toggle="dropdown">ACTION</button>
             <div class="dropdown-menu">
               <a class="dropdown-item" href="{{ route('admin.event.index') }}">BACK</a>
               <div class="dropdown-divider"></div>
@@ -37,9 +37,9 @@
               {{-- main part --}}
             <div class="col-sm-9 col-12">
 				<div class="box">
-				  <div class="box-header bg-info with-border">
-                    <h4 class="box-title text-uppercase text-center">EVENT TITLE: {{ $event->title }}</h4>
-                    <div class="row">
+				  <div class="box-header bg-info with-border text-center">
+                    <h3 class="box-title text-uppercase mb-5">EVENT TITLE: {{ $event->title }}</h3><br><br>
+                    <div class="row"><br><br>
                         <div class="col-sm-6">
                             <h5 class="text-white text-uppercase">date: {{ $event->date }} at {{ $event->time }}</h5>
                         </div>
@@ -65,7 +65,7 @@
 					<h4 class="box-title text-uppercase">People Incharge</h4>
 				  </div>
 				  <div class="box-body">
-					<p>{{ $event->user->name }}</p>
+					<p class="lead"><a href="{{ route('admin.members.show',$event->assign_to) }}" target="_blank">{{ $event->user->fullname }}</a></p>
 				  </div>
 				  <div class="box-footer">
 					<p class="h5 text-uppercase">Church Management System</p>

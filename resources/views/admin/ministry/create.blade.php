@@ -79,13 +79,13 @@
                         @foreach ($minitries as $key=>$ministry)
                             <a class="media media-single" href="#">
                                 <span class="badge badge-pill badge-danger-light">{{ $key + 1 }}</span>
-                                <span class="title">{{ $ministry->name }} </span>
+                                <span class="title">{{ $ministry->name }} Department</span>
                             </a>
                         @endforeach
 					  </div>
 				  </div>
 				  <div class="box-footer">
-					<p>A footer for more content inside</p>
+					<p class="lead text-uppercase">content inside</p>
 				  </div>
 				</div>
 			  </div>

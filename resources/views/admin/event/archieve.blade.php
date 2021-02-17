@@ -35,9 +35,7 @@
                 <h3 class="box-title text-uppercase">
                     Past events
                 </h3>
-                <a href="{{ route('admin.event.create') }}" class="waves-effect waves-light btn btn-danger mb-5 px-5 float-right text-uppercase">
-                    <i class="fa fa-plus"></i> New event
-                </a>
+                @include('admin.event.buttons')
                 {{-- <h6 class="box-subtitle">Export data to Copy, CSV, Excel, PDF &amp; Print</h6> --}}
               </div>
               <!-- /.box-header -->
@@ -64,7 +62,9 @@
                                     <td>{{ $event->location }}</td>
                                     <td>{{ $event->date }}</td>
                                     <td>{{ $event->time }}</td>
-                                    <td>{{ $event->user->name }}</td>
+                                    <td>
+                                        <a href="{{ route('admin.members.index',$event->assign_to) }}">{{ $event->user->fullname }}</a>
+                                    </td>
                                     <td>
                                         @if ($event->date > date('Y-m-d'))
                                             <span class="badge badge-success text-uppercase">upcoming Event</span>

@@ -10,4 +10,9 @@ class GivingCategory extends Model
     {
         return $this->belongsTo('App\User', 'created_by', 'id');
     }
+
+   public function serviceName()
+   {
+       return $this->belongsTo('App\Service', 'service_id', 'id');
+   }
 }

@@ -55,7 +55,7 @@
                           @foreach ($minitries as $key=>$ministry)
                               <tr>
                                   <td>{{ $key+ 1 }}</td>
-                                  <td>{{ $ministry->name }}</td>
+                                  <td>{{ $ministry->name }} Department</td>
                                   <td>
                                     @if ($ministry->current_leader == NULL)
                                         <span class="badge badge-info text-uppercase">not assigned</span>
@@ -65,9 +65,14 @@
                                   </td>
                                   <td>{{ $ministry->created_at->toFormattedDateString() }}</td>
                                   <td>
-                                      <a href="{{ route('admin.ministry.show', $ministry->id) }}" class="btn btn-info btn-sm">
-                                            <i class="fa fa-eye"></i>
-                                        </a>
+                                        <div class="btn-group mb-5">
+                                            <button type="button" class="waves-effect waves-light btn btn-info dropdown-toggle" data-toggle="dropdown">ACTIONS</button>
+                                            <div class="dropdown-menu">
+                                              <a class="dropdown-item" href="{{ route('admin.ministry.edit', $ministry->id) }}">EDIT</a>
+                                              <div class="dropdown-divider"></div>
+                                              <a class="dropdown-item" href="{{ route('admin.ministry.show', $ministry->id) }}">VIEW</a>
+                                            </div>
+                                          </div>
                                   </td>
                               </tr>
                           @endforeach

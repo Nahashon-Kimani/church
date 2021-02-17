@@ -2,7 +2,6 @@
 
 @section('content')
 
-
 <div class="content-wrapper">
     <div class="container-full">
       <!-- Content Header (Page header) -->
@@ -30,12 +29,13 @@
           <div class="col-12">
             <div class="box">
               <div class="box-header bg-info with-border">
-                <h3 class="box-title text-uppercase">
-                    all events
-                </h3>
-                <a href="{{ route('admin.event.create') }}" class="waves-effect waves-light btn btn-danger mb-5 px-5 float-right text-uppercase">
-                    <i class="fa fa-plus"></i> New event
-                </a>
+                <div class="clearfix">
+                    <h3 class="box-title text-uppercase">
+                        all events
+                    </h3>
+                    {{-- Main Buttons --}}
+                    @include('admin.event.buttons')
+                </div>
               </div>
               <!-- /.box-header -->
               <div class="box-body">
@@ -61,7 +61,9 @@
                                     <td>{{ $event->location }}</td>
                                     <td>{{ $event->date }}</td>
                                     <td>{{ $event->time }}</td>
-                                    <td>{{ $event->user->name }}</td>
+                                    <td>
+                                        <a href="{{ route('admin.members.index',$event->assign_to) }}">{{ $event->user->fullname }}</a>
+                                    </td>
                                     <td>
                                         @if ($event->date > date('Y-m-d'))
                                             <span class="badge badge-success text-uppercase">upcoming Event</span>

@@ -8,6 +8,7 @@ use Brian2694\Toastr\Facades\Toastr;
 use App\District;
 use App\User;
 use App\Member;
+use App\DistrictMember;
 
 class DistrictController extends Controller
 {
@@ -33,7 +34,7 @@ class DistrictController extends Controller
     {
        $districts = District::latest()->get();
        $members = Member::latest()->get();
-        return view('admin.district.create', compact('districts', 'members'));
+       return view('admin.district.create', compact('districts', 'members'));
     }
 
     /**
@@ -66,7 +67,21 @@ class DistrictController extends Controller
      */
     public function show($id)
     {
-        //
+        $district = District::findOrFail($id);
+        $districts = District::latest()->get();
+        $members = Member::latest()->get();
+        $districtMembers = DistrictMember::where('district_id', '=', $id)->latest()->get();
+        $memberNo = DistrictMember::where('district_id', '=', $id)->count();
+        return view('admin.district.show', compact('district', 'districts', 'members', 'districtMembers', 'memberNo'));
+    }
+
+    // Show the active members of this district
+    public function active($id)
+    {
+        $districts = District::latest()->get();
+        $noOfDistricts = District::all()->count();
+        $users = User::latest()->get();
+        return view('admin.district.index', compact('districts', 'noOfDistricts', 'users'));
     }
 
     /**

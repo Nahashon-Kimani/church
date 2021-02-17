@@ -28,7 +28,7 @@
           <div class="row">			  
               <div class="col-sm-12 col-12">
                     <div class="box">
-                      <div class="box-header with-border">
+                      <div class="box-header bg-info with-border">
                         <h4 class="box-title text-uppercase">create new event</h4>
                       </div>
                       <!-- /.box-header -->
@@ -38,9 +38,11 @@
                               <h4 class="box-title text-info"><i class="ti-user mr-15"></i> Event Info</h4>
                               <hr class="my-15">
                               <input type="hidden" name="created_by" value="{{ Auth::user()->id }}">
-                              <div class="form-group">
-                                <label>EVENT TITLE</label>
-                                <input type="text" name="title" class="form-control" placeholder="Company Name">
+                              <div class="row">
+                                <div class="form-group col-md-6">
+                                  <label>EVENT TITLE</label>
+                                  <input type="text" name="title" class="form-control" placeholder="Wedding / Thanks giving">
+                                </div>
                               </div>
                               <div class="row">
                                 <div class="col-md-6">
@@ -56,25 +58,30 @@
                                         {{-- multiple="multiple": to make it select multiple  --}}
                                         <option selected disabled>-- Select --</option>
                                         @foreach ($users as $user)
-                                            <option value="{{ $user->id }}">{{ $user->name }}</option>
+                                            <option value="{{ $user->id }}">{{ $user->fullname }}</option>
                                         @endforeach
                                       </select>
                                   </div>
                                 </div>
                               </div>
+                              <hr class="my-15">
                               <h4 class="box-title text-info mt-5"><i class="ti-save mr-15"></i> EVENT DATE AND TIME</h4>
                               <hr class="my-15">
                               <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                   <div class="form-group">
                                     <label>EVENT DATE</label>
                                     <input type="date" name="date" class="form-control" placeholder="DATE">
                                   </div>
-                                </div>
-                                <div class="col-md-6">
                                   <div class="form-group">
                                     <label>EVENT START TIME</label>
                                     <input type="time" name="time" class="form-control" placeholder="EVENT START TIME">
+                                  </div>
+                                </div>
+                                <div class="col-md-8">
+                                  <div class="form-group">
+                                    <label> EVENT DETAILS</label>
+                                    <textarea rows="5" name="detail" class="form-control" placeholder="About EVENT"></textarea>
                                   </div>
                                 </div>
                               </div>
@@ -84,19 +91,13 @@
                                   <input type="file" id="file">
                                 </label>
                               </div> --}}
-                              <h4 class="box-title text-info"><i class="ti-save mr-15"></i> EVENT DETAILS</h4>
-                              <hr class="my-15">
-                              <div class="form-group">
-                                <label> EVENT DETAILS</label>
-                                <textarea rows="5" name="detail" class="form-control" placeholder="About EVENT"></textarea>
-                              </div>
                           </div>
                           <!-- /.box-body -->
                           <div class="box-footer">
-                              <a href="{{ route('admin.event.index') }}" class="btn btn-rounded btn-warning btn-outline mr-1">
+                              <a href="{{ route('admin.event.index') }}" class="btn btn-rounded btn-danger btn-outline mr-1">
                                 <i class="ti-trash"></i> Cancel
                               </a>
-                              <button type="submit" class="btn btn-rounded btn-primary btn-outline">
+                              <button type="submit" class="btn btn-rounded btn-info btn-outline">
                                 <i class="ti-save-alt"></i> Save
                               </button>
                           </div>  
