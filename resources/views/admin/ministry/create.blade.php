@@ -1,5 +1,5 @@
 @extends('layouts.admin.app')
-
+@section('title', 'NEW MINISTRY')
 @section('content')
 
 <div class="content-wrapper" style="min-height: 889px;">

@@ -58,7 +58,7 @@
                                   <td>{{ $ministry->name }} Department</td>
                                   <td>
                                     @if ($ministry->current_leader == NULL)
-                                        <span class="badge badge-info text-uppercase">not assigned</span>
+                                        <span class="badge badge-danger text-uppercase">not assigned</span>
                                     @else
                                         {{ $ministry->currentLeader->fullname }}
                                     @endif

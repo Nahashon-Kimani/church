@@ -48,7 +48,10 @@ Route::resource('event', 'EventController');
 Route::get('upcoming/event','EventController@upcoming')->name('event.upcoming');
 Route::get('archieve/event','EventController@archieve')->name('event.archieve');
 Route::get('todays/event','EventController@todays')->name('event.todays');
+
+// Ministry
 Route::resource('ministry', 'MinistryController');
+Route::resource('ministrymember', 'MinistryMemberController');
 
 // Family and Members
 Route::resource('members', 'MembersController');

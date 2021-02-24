@@ -58,7 +58,7 @@
                               <tr>
                                 <td>{{ $key + 1 }}</td>
                                 <td>{{ $announcement->title }}</td>
-                                <td>{{ date('F j Y', strtotime($announcement->start_date)) }}</td>
+                                <td>{{ date('dS - F - Y', strtotime($announcement->start_date)) }}</td>
                                 <td>{{ date('F j Y', strtotime($announcement->stop_date)) }}</td>
                                 <td>{{ date('h:i A', strtotime($announcement->start_time)) }}</td>
                                 <td>{{ date('h:i A', strtotime($announcement->stop_time)) }}</td>

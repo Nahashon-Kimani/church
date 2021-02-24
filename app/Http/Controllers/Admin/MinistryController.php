@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
+use App\MinistryMember;
 use App\Ministry;
 use App\Member;
 
@@ -66,7 +67,9 @@ class MinistryController extends Controller
     {
         $ministry = Ministry::findOrFail($id);
         $minitries = Ministry::latest()->get();
-        return view('admin.ministry.show', compact('ministry', 'minitries'));
+        $members = Member::latest()->get();
+        $ministryMembers = MinistryMember::where('ministry_id', '=', $id)->latest()->get();
+        return view('admin.ministry.show', compact('ministry', 'minitries', 'ministryMembers', 'members'));
     }
 
     /**

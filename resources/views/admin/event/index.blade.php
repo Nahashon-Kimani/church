@@ -59,8 +59,8 @@
                                     <td>{{ $key + 1 }}</td>
                                     <td>{{ $event->title }}</td>
                                     <td>{{ $event->location }}</td>
-                                    <td>{{ $event->date }}</td>
-                                    <td>{{ $event->time }}</td>
+                                    <td>{{ date('dS - F- Y', $event->date) }}</td>
+                                    <td>{{ date('h:i A', strtotime($event->time)) }}</td>
                                     <td>
                                         <a href="{{ route('admin.members.index',$event->assign_to) }}">{{ $event->user->fullname }}</a>
                                     </td>
